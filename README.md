@@ -42,13 +42,9 @@ To login, use the `/login` endpoint and provide a valid username and password. T
 
 To register, use the `/register` endpoint and provide a valid username and password.
 
-### Add Data
+### Add Data and Predictions
 
-To add data, use the `/data` endpoint and provide a valid token and data. The data should be in the form of a csv file.
-
-### Predictions
-
-To get predictions, use the `/predictions` endpoint and provide a valid token.
+To add data and get predictions, use the `/project-data` endpoint and provide a valid token and data. The data should be in the form of a csv file. 
 
 ### Add Token
 
