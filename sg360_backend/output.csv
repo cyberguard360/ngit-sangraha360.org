@@ -1,0 +1,522 @@
+id,name,tc,pslist_nproc,pslist_avg_threads,pslist_nprocs64bit,handles_nfile,handles_nthread,ldrmodules_not_in_load,ldrmodules_not_in_init,ldrmodules_not_in_mem,ldrmodules_not_in_load_avg,ldrmodules_not_in_init_avg,ldrmodules_not_in_mem_avg,malfind_ninjections,malfind_commitCharge,malfind_protection,malfind_uniqueInjections,svcscan_nservices,svcscan_kernel_drivers,svcscan_fs_drivers,svcscan_process_services,svcscan_shared_process_services,svcscan_interactive_process_services,svcscan_nactive,callbacks_ncallbacks,callbacks_nanonymous,callbacks_ngeneric,Memory_PssTotal,MemoryPssClean,MemorySharedDirty,MemoryPrivateDirty,MemorySharedClean,MemoryPrivateClean,MemoryHeapSize,MemoryHeapAlloc,MemoryHeapFree,MemoryParcelMemory,totalReceivedBytes,totalReceivedPackets,totalTransmittedBytes,totalTransmittedPackets,APICall,Permission,URL,Provider,Feature,Intent,Activity,Call,ServiceReceiver,RealPermission,model_predict,manual_predict
+1,,,1.0,15.0,0.0,78.0,15.0,0.0,0.0,100.0,0.0,0.0,100.0,16838.0,75404.0,61208.0,12420.0,196.0,0.0,0.0,25.0,0.0,25.0,50.0,1.0,1.0,1.0,72916.0,9865.0,848.0,9776.0,80476.0,6028.0,72760.0,58592.0,14168.0,16885.0,7925568.0,8352.0,1366015.0,6027.0,"GET /api/users
+POST /api/login
+PUT /api/users/1
+DELETE /api/users/1","android.permission.ACCESS_NETWORK_STATE
+android.permission.BLUETOOTH
+android.permission.BLUETOOTH_PRIVILEGED
+android.permission.BROADCAST_STICKY
+android.permission.CHANGE_NETWORK_STATE
+android.permission.MANAGE_USB
+android.permission.MODIFY_PHONE_STATE
+android.permission.READ_DEVICE_CONFIG
+android.permission.READ_NETWORK_USAGE_HISTORY
+android.permission.READ_PHONE_STATE
+android.permission.TETHER_PRIVILEGED
+android.permission.UPDATE_APP_OPS_STATS
+android.permission.UPDATE_DEVICE_STATS
+android.permission.WRITE_SETTINGS",URL not found,No providers found,No features found,,'No activities found',,No service receivers found,Real permission information,,
+2,,,1.0,18.0,0.0,81.0,18.0,0.0,0.0,100.0,0.0,0.0,100.0,17177.0,79705.0,64376.0,15276.0,196.0,0.0,0.0,25.0,0.0,25.0,50.0,1.0,1.0,1.0,80857.0,16459.0,660.0,16408.0,82844.0,6204.0,80707.0,65512.0,15195.0,17181.0,7929503.0,8365.0,1369455.0,6041.0,"GET /api/users
+POST /api/login
+PUT /api/users/1
+DELETE /api/users/1","android.permission.PROVIDE_RESOLVER_RANKER_SERVICE
+android.permission.READ_DEVICE_CONFIG
+android.permission.MONITOR_DEFAULT_SMS_PACKAGE
+android.permission.REQUEST_NOTIFICATION_ASSISTANT_SERVICE
+android.permission.ACCESS_NETWORK_STATE
+android.permission.INTERACT_ACROSS_USERS
+android.permission.ACCESS_COARSE_LOCATION
+android.permission.QUERY_ALL_PACKAGES",URL not found,No providers found,No features found,,'242e934 com.android.textclassifier.notification.CopyCodeActivity',,No service receivers found,Real permission information,,
+3,,,1.0,20.0,0.0,82.0,20.0,0.0,0.0,100.0,0.0,0.0,100.0,22961.0,87699.0,71980.0,16808.0,196.0,0.0,0.0,25.0,0.0,25.0,50.0,1.0,1.0,1.0,88970.0,17994.0,664.0,17944.0,86456.0,4524.0,88823.0,73144.0,15679.0,22977.0,8718287.0,9104.0,1452053.0,6341.0,"GET /api/users
+POST /api/login
+PUT /api/users/1
+DELETE /api/users/1","android.permission.READ_MEDIA_VISUAL_USER_SELECTED
+android.permission.INTERNET
+android.permission.ACCESS_NETWORK_STATE
+android.permission.ACCESS_WIFI_STATE
+android.permission.WRITE_EXTERNAL_STORAGE
+android.permission.READ_MEDIA_IMAGES
+android.permission.READ_MEDIA_VIDEO
+android.permission.RECEIVE_BOOT_COMPLETED
+android.permission.MANAGE_DOCUMENTS
+android.permission.GET_ACCOUNTS
+com.google.android.providers.gsf.permission.READ_GSERVICES
+com.google.android.c2dm.permission.RECEIVE
+android.permission.WAKE_LOCK
+android.permission.NFC
+android.permission.CAMERA
+android.permission.FOREGROUND_SERVICE_CAMERA
+android.permission.FOREGROUND_SERVICE_MEDIA_PROJECTION
+android.permission.FOREGROUND_SERVICE_MICROPHONE
+android.permission.VIBRATE
+com.google.android.gms.permission.AD_ID_NOTIFICATION
+com.google.android.gms.permission.AD_ID
+com.google.android.youtube.permission.C2D_MESSAGE
+android.permission.GET_PACKAGE_SIZE
+android.permission.FOREGROUND_SERVICE
+android.permission.FOREGROUND_SERVICE_DATA_SYNC
+android.permission.FOREGROUND_SERVICE_MEDIA_PLAYBACK
+android.permission.RUN_USER_INITIATED_JOBS
+android.permission.USE_FINGERPRINT
+android.permission.USE_BIOMETRIC
+android.permission.MODIFY_AUDIO_SETTINGS
+android.permission.READ_CONTACTS
+android.permission.ACCESS_FINE_LOCATION
+android.permission.ACCESS_COARSE_LOCATION
+android.permission.RECORD_AUDIO
+android.permission.READ_PHONE_STATE
+android.permission.SYSTEM_ALERT_WINDOW
+android.permission.HIGH_SAMPLING_RATE_SENSORS
+com.sec.android.provider.badge.permission.READ
+com.sec.android.provider.badge.permission.WRITE
+com.htc.launcher.permission.READ_SETTINGS
+com.htc.launcher.permission.UPDATE_SHORTCUT
+com.sonyericsson.home.permission.BROADCAST_BADGE
+com.sonymobile.home.permission.PROVIDER_INSERT_BADGE
+android.permission.POST_NOTIFICATIONS
+android.permission.ACCESS_ADSERVICES_ATTRIBUTION
+android.permission.ACCESS_ADSERVICES_AD_ID
+com.google.android.youtube.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION
+com.android.vending.BILLING
+android.permission.READ_EXTERNAL_STORAGE",URL not found,"ContentProviderInfo{name=com.google.android.youtube.fileprovider className=com.google.android.apps.youtube.app.common.util.MainAppFileProviderCompat}
+ContentProviderInfo{name=com.google.android.youtube.SuggestionProvider className=com.google.android.apps.youtube.app.search.suggest.YouTubeSuggestionProvider}
+ContentProviderInfo{name=com.google.android.youtube.mlkitinitprovider className=com.google.mlkit.common.internal.MlKitInitProvider}
+ContentProviderInfo{name=com.google.android.youtube.photopicker_images className=com.google.android.libraries.user.profile.photopicker.common.fileprovider.PhotoPickerFileProvider}","FeatureInfo{6a6ef38 android.hardware.camera v=0 fl=0x0}
+FeatureInfo{f471b11 android.hardware.screen.portrait v=0 fl=0x0}
+FeatureInfo{babe476 android.hardware.telephony v=0 fl=0x0}
+FeatureInfo{1106a77 android.hardware.microphone v=0 fl=0x0}
+FeatureInfo{377c6e4 android.hardware.location v=0 fl=0x0}
+FeatureInfo{f1574d android.hardware.location.gps v=0 fl=0x0}
+FeatureInfo{1e9d202 android.hardware.location.network v=0 fl=0x0}
+FeatureInfo{e173713 glEsVers=2.0 fl=0x1}",,"'58c4de com.google.android.libraries.youtube.player.features.gl.vr.VrWelcomeActivity', '67ba6bf com.google.android.libraries.youtube.edit.gallery.GalleryActivity', '62e618c com.google.android.libraries.youtube.account.image.CropActivity', '1c060d5 com.google.android.libraries.youtube.comment.image.ImageGalleryActivity', '62850ea com.google.android.libraries.accountlinking.activity.AccountLinkingActivity', '6cdefdb com.google.android.youtube.api.StandalonePlayerActivity', '3260a78 com.google.android.libraries.youtube.notification.push.optoutdialog.NotificationOptOutDialogActivity', '333551 com.google.android.play.core.common.PlayCoreDialogWrapperActivity', 'b291b6 com.google.android.apps.youtube.app.application.Shell_HomeActivity', 'd31aeb7 com.google.android.apps.youtube.app.application.InternalShell_HomeActivity', '9ed5624 com.google.android.youtube.HomeActivity', 'e24d58d com.google.android.youtube.app.application.Shell$HomeActivity', '6ce1342 com.google.android.youtube.app.honeycomb.Shell$HomeActivity', '6a87f53 com.google.android.apps.youtube.app.application.Shell_UrlActivity', '9bbb090 com.google.android.apps.youtube.app.application.Shell$UrlActivity', '4163d89 com.google.android.youtube.UrlActivity', '52e218e com.google.android.youtube.InternalUrlActivity', '4b1bdaf com.google.android.apps.youtube.app.application.Shell_ResultsActivity', 'bd345bc com.google.android.apps.youtube.app.application.Shell$ResultsActivity', '39c2945 com.google.android.apps.youtube.app.application.Shell_MediaSearchActivity', 'e6ec89a com.google.android.apps.youtube.app.application.Shell$MediaSearchActivity', '76685cb com.google.android.apps.youtube.app.application.Shell_UploadActivity', '96d01a8 com.google.android.youtube.UploadIntentHandlingActivity', '9db14c1 com.google.android.apps.youtube.app.application.Shell$UploadActivity', 'e0d466 com.google.android.apps.youtube.app.application.Shell_LiveCreationActivity', 'd55b3a7 com.google.android.apps.youtube.app.application.Shell$LiveCreationActivity', '4649054 com.google.android.apps.youtube.app.application.Shell_SettingsActivity', '7c33bfd com.google.android.apps.youtube.app.application.Shell$SettingsActivity', 'd15d0f2 com.google.android.youtube.ManageNetworkUsageActivity', '51fe343 com.google.android.apps.youtube.app.application.upgrade.NewVersionAvailableActivity', 'ea45dc0 com.google.android.apps.youtube.app.extensions.creationmodes.main.CreationModesActivity', '30c9af9 com.google.android.libraries.youtube.edit.audioswap.ui.AudioSelectionActivity', '92c0a3e com.google.android.apps.youtube.app.extensions.posts.creation.PostsCreationActivity', 'd3709f com.google.android.apps.youtube.app.extensions.reel.creation.shorts.activity.ShortsCreationActivity', '5195ec com.google.android.apps.youtube.app.extensions.reel.edit.activity.ReelCameraActivity', 'af2edb5 com.google.android.apps.youtube.app.extensions.reel.watch.activity.ReelWatchActivity', 'da8c4a com.google.android.apps.youtube.app.extensions.upload.EditVideoActivity', 'b0877bb com.google.android.apps.youtube.app.extensions.upload.UploadActivity', 'b824d8 com.google.android.apps.youtube.app.search.voice.VoiceSearchActivity', 'b1b031 com.google.android.apps.youtube.app.search.voice.VoiceSearchActivityV2', '23d2316 com.google.android.apps.youtube.app.settings.datasaving.DataSavingSettingsActivity', 'dbcd497 com.google.android.apps.youtube.app.settings.offline.activity.SmartDownloadsStorageControlsActivity', '5f6b684 com.google.android.apps.youtube.app.settings.SettingsActivity', '3c01e6d com.google.android.apps.youtube.app.settings.videoquality.VideoQualitySettingsActivity', '7605aa2 com.google.android.apps.youtube.app.vr.LaunchYouTubeVrActivity', 'af02333 com.google.android.apps.youtube.app.watchwhile.MainActivity', '6ab6f0 com.google.android.apps.youtube.app.watchwhile.WatchWhileActivity', '1cd3469 com.google.android.apps.youtube.app.watchwhile.InternalMainActivity', '8d7eee com.google.android.apps.youtube.app.WatchWhileActivity', 'effbf8f com.google.android.apps.youtube.app.webviewfallback.WebViewFallbackActivity', '6dc521c com.google.android.gms.gmscompliance.ui.UncertifiedDeviceActivity', 'a7bae25 com.google.android.gms.common.api.GoogleApiActivity', 'b569bfa com.google.android.libraries.notifications.entrypoints.systemtray.SystemTrayActivity', '4c2c5ab com.google.android.libraries.onegoogle.accountmanagement.AddAccountActivity', '6a7408 com.google.android.libraries.parenttools.youtube.ParentToolsActivity', 'ede07a1 com.android.billingclient.api.ProxyBillingActivity', '2627dc6 com.google.android.libraries.social.licenses.LicenseMenuActivity', '3661187 com.google.android.libraries.social.licenses.LicenseActivity', '136c8b4 com.google.android.libraries.user.profile.photopicker.edit.EditActivity', '4b27cdd com.google.android.libraries.user.profile.photopicker.picker.intentonly.PhotoPickerIntentActivity', '1f8b052 com.google.android.libraries.user.profile.photopicker.picker.intentonly.webview.PhotoPickerWebViewIntentActivity', 'e083f23 com.google.android.libraries.youtube.account.linking.GalFlowActivity', '4d1bc20 com.google.android.libraries.youtube.account.verification.ui.PhoneVerificationActivity', '55f09d9 com.google.android.libraries.youtube.livecreation.ui.LiveCreationActivity', '54d7f9e com.google.android.libraries.youtube.mdx.manualpairing.PairWithTvActivity', '115aa7f com.google.android.libraries.youtube.mdx.smartremote.MdxSmartRemoteActivity', 'd667a4c com.google.android.libraries.youtube.mdx.tvsignin.TvSignInActivity', 'ad6a95 com.google.android.libraries.youtube.metadataeditor.thumbnail.activity.ShortsEditThumbnailActivity', '48df7aa com.google.cardboard.sdk.QrCodeCaptureActivity', '9646f9b com.google.cardboard.sdk.HeadsetDetectionActivity'",,"ActivityInfo{e5c6d50 com.google.android.libraries.youtube.player.ui.mediasession.MediaButtonIntentReceiverProvider$DefaultMediaButtonIntentReceiver}
+ActivityInfo{2891b49 com.google.android.libraries.youtube.notification.NotificationInteractionBroadcastReceiver}
+ActivityInfo{e270c4e com.google.android.apps.youtube.app.application.backup.PackageReplacedReceiver}
+ActivityInfo{eb4316f com.google.android.apps.youtube.app.widget.YtQuickActionsWidgetProvider}
+ActivityInfo{4a30e7c com.google.android.apps.youtube.app.widget.YtSearchWidgetProvider}
+ActivityInfo{7bf2305 com.google.android.gms.measurement.AppMeasurementReceiver}
+ActivityInfo{3eb9f5a com.google.android.libraries.notifications.entrypoints.blockstatechanged.BlockStateChangedReceiver}
+ActivityInfo{f7c758b com.google.android.libraries.notifications.entrypoints.systemtray.SystemTrayBroadcastReceiver}
+ActivityInfo{8509668 com.google.android.libraries.notifications.platform.entrypoints.accountchanged.AccountChangedReceiver}
+ActivityInfo{493ea81 com.google.android.libraries.notifications.platform.entrypoints.localechanged.LocaleChangedReceiver}
+ActivityInfo{5345726 com.google.android.libraries.notifications.platform.entrypoints.push.PushReceiver}
+ActivityInfo{73adf67 com.google.android.libraries.notifications.platform.entrypoints.restart.RestartReceiver}
+ActivityInfo{4ccb114 com.google.android.libraries.notifications.platform.entrypoints.timezonechanged.TimezoneChangedReceiver}
+ActivityInfo{293adbd com.google.android.libraries.notifications.platform.entrypoints.update.UpdateReceiver}
+ActivityInfo{4febfb2 com.google.android.libraries.performance.primes.transmitter.LifeboatReceiver}
+ActivityInfo{48c0b03 com.google.android.libraries.phenotype.client.stable.AccountRemovedBroadcastReceiver}
+ActivityInfo{24dca80 com.google.android.libraries.phenotype.client.stable.PhenotypeUpdateBackgroundBroadcastReceiver}
+ActivityInfo{dd268b9 com.google.android.libraries.youtube.account.service.AccountsChangedReceiver}
+ActivityInfo{69524fe com.google.android.libraries.youtube.common.locale.LocaleChangedBroadcastReceiver}
+ActivityInfo{93a545f com.google.android.libraries.youtube.mdx.background.MdxBackgroundPlaybackBroadcastReceiver}
+ActivityInfo{4050eac com.google.android.libraries.youtube.mdx.background.MdxBackgroundScanBootReceiver}
+ActivityInfo{5a7d775 com.google.android.libraries.youtube.mdx.notification.continueontv.ContinueWatchingOnTvNotificationBroadcastReceiver}
+ActivityInfo{59a930a com.google.android.libraries.youtube.rendering.customtabs.CustomTabsReceiver}
+ActivityInfo{f59d77b com.google.android.libraries.youtube.share.endpoint.ShareLoggingBroadcastReceiver}
+ActivityInfo{d0a6998 com.google.firebase.iid.FirebaseInstanceIdReceiver}
+ActivityInfo{d2b75f1 androidx.work.impl.utils.ForceStopRunnable$BroadcastReceiver}
+ActivityInfo{2d6d5d6 androidx.work.impl.background.systemalarm.RescheduleReceiver}
+ActivityInfo{4247057 androidx.work.impl.diagnostics.DiagnosticsReceiver}",Real permission information,,
+4,,,1.0,20.0,0.0,82.0,20.0,0.0,0.0,100.0,0.0,0.0,100.0,22585.0,81448.0,65624.0,10976.0,196.0,0.0,0.0,25.0,0.0,25.0,50.0,1.0,1.0,1.0,82580.0,12158.0,664.0,12108.0,86456.0,4524.0,82433.0,66756.0,15677.0,22585.0,8719213.0,9117.0,1467214.0,6358.0,"GET /api/users
+POST /api/login
+PUT /api/users/1
+DELETE /api/users/1","android.permission.READ_MEDIA_VISUAL_USER_SELECTED
+android.permission.INTERNET
+android.permission.ACCESS_NETWORK_STATE
+android.permission.ACCESS_WIFI_STATE
+android.permission.WRITE_EXTERNAL_STORAGE
+android.permission.READ_MEDIA_IMAGES
+android.permission.READ_MEDIA_VIDEO
+android.permission.RECEIVE_BOOT_COMPLETED
+android.permission.MANAGE_DOCUMENTS
+android.permission.GET_ACCOUNTS
+com.google.android.providers.gsf.permission.READ_GSERVICES
+com.google.android.c2dm.permission.RECEIVE
+android.permission.WAKE_LOCK
+android.permission.NFC
+android.permission.CAMERA
+android.permission.FOREGROUND_SERVICE_CAMERA
+android.permission.FOREGROUND_SERVICE_MEDIA_PROJECTION
+android.permission.FOREGROUND_SERVICE_MICROPHONE
+android.permission.VIBRATE
+com.google.android.gms.permission.AD_ID_NOTIFICATION
+com.google.android.gms.permission.AD_ID
+com.google.android.youtube.permission.C2D_MESSAGE
+android.permission.GET_PACKAGE_SIZE
+android.permission.FOREGROUND_SERVICE
+android.permission.FOREGROUND_SERVICE_DATA_SYNC
+android.permission.FOREGROUND_SERVICE_MEDIA_PLAYBACK
+android.permission.RUN_USER_INITIATED_JOBS
+android.permission.USE_FINGERPRINT
+android.permission.USE_BIOMETRIC
+android.permission.MODIFY_AUDIO_SETTINGS
+android.permission.READ_CONTACTS
+android.permission.ACCESS_FINE_LOCATION
+android.permission.ACCESS_COARSE_LOCATION
+android.permission.RECORD_AUDIO
+android.permission.READ_PHONE_STATE
+android.permission.SYSTEM_ALERT_WINDOW
+android.permission.HIGH_SAMPLING_RATE_SENSORS
+com.sec.android.provider.badge.permission.READ
+com.sec.android.provider.badge.permission.WRITE
+com.htc.launcher.permission.READ_SETTINGS
+com.htc.launcher.permission.UPDATE_SHORTCUT
+com.sonyericsson.home.permission.BROADCAST_BADGE
+com.sonymobile.home.permission.PROVIDER_INSERT_BADGE
+android.permission.POST_NOTIFICATIONS
+android.permission.ACCESS_ADSERVICES_ATTRIBUTION
+android.permission.ACCESS_ADSERVICES_AD_ID
+com.google.android.youtube.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION
+com.android.vending.BILLING
+android.permission.READ_EXTERNAL_STORAGE",URL not found,"ContentProviderInfo{name=com.google.android.youtube.fileprovider className=com.google.android.apps.youtube.app.common.util.MainAppFileProviderCompat}
+ContentProviderInfo{name=com.google.android.youtube.SuggestionProvider className=com.google.android.apps.youtube.app.search.suggest.YouTubeSuggestionProvider}
+ContentProviderInfo{name=com.google.android.youtube.mlkitinitprovider className=com.google.mlkit.common.internal.MlKitInitProvider}
+ContentProviderInfo{name=com.google.android.youtube.photopicker_images className=com.google.android.libraries.user.profile.photopicker.common.fileprovider.PhotoPickerFileProvider}","FeatureInfo{6a6ef38 android.hardware.camera v=0 fl=0x0}
+FeatureInfo{f471b11 android.hardware.screen.portrait v=0 fl=0x0}
+FeatureInfo{babe476 android.hardware.telephony v=0 fl=0x0}
+FeatureInfo{1106a77 android.hardware.microphone v=0 fl=0x0}
+FeatureInfo{377c6e4 android.hardware.location v=0 fl=0x0}
+FeatureInfo{f1574d android.hardware.location.gps v=0 fl=0x0}
+FeatureInfo{1e9d202 android.hardware.location.network v=0 fl=0x0}
+FeatureInfo{e173713 glEsVers=2.0 fl=0x1}",,"'58c4de com.google.android.libraries.youtube.player.features.gl.vr.VrWelcomeActivity', '67ba6bf com.google.android.libraries.youtube.edit.gallery.GalleryActivity', '62e618c com.google.android.libraries.youtube.account.image.CropActivity', '1c060d5 com.google.android.libraries.youtube.comment.image.ImageGalleryActivity', '62850ea com.google.android.libraries.accountlinking.activity.AccountLinkingActivity', '6cdefdb com.google.android.youtube.api.StandalonePlayerActivity', '3260a78 com.google.android.libraries.youtube.notification.push.optoutdialog.NotificationOptOutDialogActivity', '333551 com.google.android.play.core.common.PlayCoreDialogWrapperActivity', 'b291b6 com.google.android.apps.youtube.app.application.Shell_HomeActivity', 'd31aeb7 com.google.android.apps.youtube.app.application.InternalShell_HomeActivity', '9ed5624 com.google.android.youtube.HomeActivity', 'e24d58d com.google.android.youtube.app.application.Shell$HomeActivity', '6ce1342 com.google.android.youtube.app.honeycomb.Shell$HomeActivity', '6a87f53 com.google.android.apps.youtube.app.application.Shell_UrlActivity', '9bbb090 com.google.android.apps.youtube.app.application.Shell$UrlActivity', '4163d89 com.google.android.youtube.UrlActivity', '52e218e com.google.android.youtube.InternalUrlActivity', '4b1bdaf com.google.android.apps.youtube.app.application.Shell_ResultsActivity', 'bd345bc com.google.android.apps.youtube.app.application.Shell$ResultsActivity', '39c2945 com.google.android.apps.youtube.app.application.Shell_MediaSearchActivity', 'e6ec89a com.google.android.apps.youtube.app.application.Shell$MediaSearchActivity', '76685cb com.google.android.apps.youtube.app.application.Shell_UploadActivity', '96d01a8 com.google.android.youtube.UploadIntentHandlingActivity', '9db14c1 com.google.android.apps.youtube.app.application.Shell$UploadActivity', 'e0d466 com.google.android.apps.youtube.app.application.Shell_LiveCreationActivity', 'd55b3a7 com.google.android.apps.youtube.app.application.Shell$LiveCreationActivity', '4649054 com.google.android.apps.youtube.app.application.Shell_SettingsActivity', '7c33bfd com.google.android.apps.youtube.app.application.Shell$SettingsActivity', 'd15d0f2 com.google.android.youtube.ManageNetworkUsageActivity', '51fe343 com.google.android.apps.youtube.app.application.upgrade.NewVersionAvailableActivity', 'ea45dc0 com.google.android.apps.youtube.app.extensions.creationmodes.main.CreationModesActivity', '30c9af9 com.google.android.libraries.youtube.edit.audioswap.ui.AudioSelectionActivity', '92c0a3e com.google.android.apps.youtube.app.extensions.posts.creation.PostsCreationActivity', 'd3709f com.google.android.apps.youtube.app.extensions.reel.creation.shorts.activity.ShortsCreationActivity', '5195ec com.google.android.apps.youtube.app.extensions.reel.edit.activity.ReelCameraActivity', 'af2edb5 com.google.android.apps.youtube.app.extensions.reel.watch.activity.ReelWatchActivity', 'da8c4a com.google.android.apps.youtube.app.extensions.upload.EditVideoActivity', 'b0877bb com.google.android.apps.youtube.app.extensions.upload.UploadActivity', 'b824d8 com.google.android.apps.youtube.app.search.voice.VoiceSearchActivity', 'b1b031 com.google.android.apps.youtube.app.search.voice.VoiceSearchActivityV2', '23d2316 com.google.android.apps.youtube.app.settings.datasaving.DataSavingSettingsActivity', 'dbcd497 com.google.android.apps.youtube.app.settings.offline.activity.SmartDownloadsStorageControlsActivity', '5f6b684 com.google.android.apps.youtube.app.settings.SettingsActivity', '3c01e6d com.google.android.apps.youtube.app.settings.videoquality.VideoQualitySettingsActivity', '7605aa2 com.google.android.apps.youtube.app.vr.LaunchYouTubeVrActivity', 'af02333 com.google.android.apps.youtube.app.watchwhile.MainActivity', '6ab6f0 com.google.android.apps.youtube.app.watchwhile.WatchWhileActivity', '1cd3469 com.google.android.apps.youtube.app.watchwhile.InternalMainActivity', '8d7eee com.google.android.apps.youtube.app.WatchWhileActivity', 'effbf8f com.google.android.apps.youtube.app.webviewfallback.WebViewFallbackActivity', '6dc521c com.google.android.gms.gmscompliance.ui.UncertifiedDeviceActivity', 'a7bae25 com.google.android.gms.common.api.GoogleApiActivity', 'b569bfa com.google.android.libraries.notifications.entrypoints.systemtray.SystemTrayActivity', '4c2c5ab com.google.android.libraries.onegoogle.accountmanagement.AddAccountActivity', '6a7408 com.google.android.libraries.parenttools.youtube.ParentToolsActivity', 'ede07a1 com.android.billingclient.api.ProxyBillingActivity', '2627dc6 com.google.android.libraries.social.licenses.LicenseMenuActivity', '3661187 com.google.android.libraries.social.licenses.LicenseActivity', '136c8b4 com.google.android.libraries.user.profile.photopicker.edit.EditActivity', '4b27cdd com.google.android.libraries.user.profile.photopicker.picker.intentonly.PhotoPickerIntentActivity', '1f8b052 com.google.android.libraries.user.profile.photopicker.picker.intentonly.webview.PhotoPickerWebViewIntentActivity', 'e083f23 com.google.android.libraries.youtube.account.linking.GalFlowActivity', '4d1bc20 com.google.android.libraries.youtube.account.verification.ui.PhoneVerificationActivity', '55f09d9 com.google.android.libraries.youtube.livecreation.ui.LiveCreationActivity', '54d7f9e com.google.android.libraries.youtube.mdx.manualpairing.PairWithTvActivity', '115aa7f com.google.android.libraries.youtube.mdx.smartremote.MdxSmartRemoteActivity', 'd667a4c com.google.android.libraries.youtube.mdx.tvsignin.TvSignInActivity', 'ad6a95 com.google.android.libraries.youtube.metadataeditor.thumbnail.activity.ShortsEditThumbnailActivity', '48df7aa com.google.cardboard.sdk.QrCodeCaptureActivity', '9646f9b com.google.cardboard.sdk.HeadsetDetectionActivity'",,"ActivityInfo{e5c6d50 com.google.android.libraries.youtube.player.ui.mediasession.MediaButtonIntentReceiverProvider$DefaultMediaButtonIntentReceiver}
+ActivityInfo{2891b49 com.google.android.libraries.youtube.notification.NotificationInteractionBroadcastReceiver}
+ActivityInfo{e270c4e com.google.android.apps.youtube.app.application.backup.PackageReplacedReceiver}
+ActivityInfo{eb4316f com.google.android.apps.youtube.app.widget.YtQuickActionsWidgetProvider}
+ActivityInfo{4a30e7c com.google.android.apps.youtube.app.widget.YtSearchWidgetProvider}
+ActivityInfo{7bf2305 com.google.android.gms.measurement.AppMeasurementReceiver}
+ActivityInfo{3eb9f5a com.google.android.libraries.notifications.entrypoints.blockstatechanged.BlockStateChangedReceiver}
+ActivityInfo{f7c758b com.google.android.libraries.notifications.entrypoints.systemtray.SystemTrayBroadcastReceiver}
+ActivityInfo{8509668 com.google.android.libraries.notifications.platform.entrypoints.accountchanged.AccountChangedReceiver}
+ActivityInfo{493ea81 com.google.android.libraries.notifications.platform.entrypoints.localechanged.LocaleChangedReceiver}
+ActivityInfo{5345726 com.google.android.libraries.notifications.platform.entrypoints.push.PushReceiver}
+ActivityInfo{73adf67 com.google.android.libraries.notifications.platform.entrypoints.restart.RestartReceiver}
+ActivityInfo{4ccb114 com.google.android.libraries.notifications.platform.entrypoints.timezonechanged.TimezoneChangedReceiver}
+ActivityInfo{293adbd com.google.android.libraries.notifications.platform.entrypoints.update.UpdateReceiver}
+ActivityInfo{4febfb2 com.google.android.libraries.performance.primes.transmitter.LifeboatReceiver}
+ActivityInfo{48c0b03 com.google.android.libraries.phenotype.client.stable.AccountRemovedBroadcastReceiver}
+ActivityInfo{24dca80 com.google.android.libraries.phenotype.client.stable.PhenotypeUpdateBackgroundBroadcastReceiver}
+ActivityInfo{dd268b9 com.google.android.libraries.youtube.account.service.AccountsChangedReceiver}
+ActivityInfo{69524fe com.google.android.libraries.youtube.common.locale.LocaleChangedBroadcastReceiver}
+ActivityInfo{93a545f com.google.android.libraries.youtube.mdx.background.MdxBackgroundPlaybackBroadcastReceiver}
+ActivityInfo{4050eac com.google.android.libraries.youtube.mdx.background.MdxBackgroundScanBootReceiver}
+ActivityInfo{5a7d775 com.google.android.libraries.youtube.mdx.notification.continueontv.ContinueWatchingOnTvNotificationBroadcastReceiver}
+ActivityInfo{59a930a com.google.android.libraries.youtube.rendering.customtabs.CustomTabsReceiver}
+ActivityInfo{f59d77b com.google.android.libraries.youtube.share.endpoint.ShareLoggingBroadcastReceiver}
+ActivityInfo{d0a6998 com.google.firebase.iid.FirebaseInstanceIdReceiver}
+ActivityInfo{d2b75f1 androidx.work.impl.utils.ForceStopRunnable$BroadcastReceiver}
+ActivityInfo{2d6d5d6 androidx.work.impl.background.systemalarm.RescheduleReceiver}
+ActivityInfo{4247057 androidx.work.impl.diagnostics.DiagnosticsReceiver}",Real permission information,,
+5,,,1.0,20.0,0.0,82.0,20.0,0.0,0.0,100.0,0.0,0.0,100.0,21952.0,83291.0,67468.0,13448.0,196.0,0.0,0.0,25.0,0.0,25.0,50.0,1.0,1.0,1.0,84431.0,14630.0,664.0,14580.0,86456.0,4524.0,84284.0,68608.0,15676.0,21960.0,8720139.0,9130.0,1482375.0,6375.0,"GET /api/users
+POST /api/login
+PUT /api/users/1
+DELETE /api/users/1","android.permission.READ_MEDIA_VISUAL_USER_SELECTED
+android.permission.INTERNET
+android.permission.ACCESS_NETWORK_STATE
+android.permission.ACCESS_WIFI_STATE
+android.permission.WRITE_EXTERNAL_STORAGE
+android.permission.READ_MEDIA_IMAGES
+android.permission.READ_MEDIA_VIDEO
+android.permission.RECEIVE_BOOT_COMPLETED
+android.permission.MANAGE_DOCUMENTS
+android.permission.GET_ACCOUNTS
+com.google.android.providers.gsf.permission.READ_GSERVICES
+com.google.android.c2dm.permission.RECEIVE
+android.permission.WAKE_LOCK
+android.permission.NFC
+android.permission.CAMERA
+android.permission.FOREGROUND_SERVICE_CAMERA
+android.permission.FOREGROUND_SERVICE_MEDIA_PROJECTION
+android.permission.FOREGROUND_SERVICE_MICROPHONE
+android.permission.VIBRATE
+com.google.android.gms.permission.AD_ID_NOTIFICATION
+com.google.android.gms.permission.AD_ID
+com.google.android.youtube.permission.C2D_MESSAGE
+android.permission.GET_PACKAGE_SIZE
+android.permission.FOREGROUND_SERVICE
+android.permission.FOREGROUND_SERVICE_DATA_SYNC
+android.permission.FOREGROUND_SERVICE_MEDIA_PLAYBACK
+android.permission.RUN_USER_INITIATED_JOBS
+android.permission.USE_FINGERPRINT
+android.permission.USE_BIOMETRIC
+android.permission.MODIFY_AUDIO_SETTINGS
+android.permission.READ_CONTACTS
+android.permission.ACCESS_FINE_LOCATION
+android.permission.ACCESS_COARSE_LOCATION
+android.permission.RECORD_AUDIO
+android.permission.READ_PHONE_STATE
+android.permission.SYSTEM_ALERT_WINDOW
+android.permission.HIGH_SAMPLING_RATE_SENSORS
+com.sec.android.provider.badge.permission.READ
+com.sec.android.provider.badge.permission.WRITE
+com.htc.launcher.permission.READ_SETTINGS
+com.htc.launcher.permission.UPDATE_SHORTCUT
+com.sonyericsson.home.permission.BROADCAST_BADGE
+com.sonymobile.home.permission.PROVIDER_INSERT_BADGE
+android.permission.POST_NOTIFICATIONS
+android.permission.ACCESS_ADSERVICES_ATTRIBUTION
+android.permission.ACCESS_ADSERVICES_AD_ID
+com.google.android.youtube.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION
+com.android.vending.BILLING
+android.permission.READ_EXTERNAL_STORAGE",URL not found,"ContentProviderInfo{name=com.google.android.youtube.fileprovider className=com.google.android.apps.youtube.app.common.util.MainAppFileProviderCompat}
+ContentProviderInfo{name=com.google.android.youtube.SuggestionProvider className=com.google.android.apps.youtube.app.search.suggest.YouTubeSuggestionProvider}
+ContentProviderInfo{name=com.google.android.youtube.mlkitinitprovider className=com.google.mlkit.common.internal.MlKitInitProvider}
+ContentProviderInfo{name=com.google.android.youtube.photopicker_images className=com.google.android.libraries.user.profile.photopicker.common.fileprovider.PhotoPickerFileProvider}","FeatureInfo{6a6ef38 android.hardware.camera v=0 fl=0x0}
+FeatureInfo{f471b11 android.hardware.screen.portrait v=0 fl=0x0}
+FeatureInfo{babe476 android.hardware.telephony v=0 fl=0x0}
+FeatureInfo{1106a77 android.hardware.microphone v=0 fl=0x0}
+FeatureInfo{377c6e4 android.hardware.location v=0 fl=0x0}
+FeatureInfo{f1574d android.hardware.location.gps v=0 fl=0x0}
+FeatureInfo{1e9d202 android.hardware.location.network v=0 fl=0x0}
+FeatureInfo{e173713 glEsVers=2.0 fl=0x1}",,"'58c4de com.google.android.libraries.youtube.player.features.gl.vr.VrWelcomeActivity', '67ba6bf com.google.android.libraries.youtube.edit.gallery.GalleryActivity', '62e618c com.google.android.libraries.youtube.account.image.CropActivity', '1c060d5 com.google.android.libraries.youtube.comment.image.ImageGalleryActivity', '62850ea com.google.android.libraries.accountlinking.activity.AccountLinkingActivity', '6cdefdb com.google.android.youtube.api.StandalonePlayerActivity', '3260a78 com.google.android.libraries.youtube.notification.push.optoutdialog.NotificationOptOutDialogActivity', '333551 com.google.android.play.core.common.PlayCoreDialogWrapperActivity', 'b291b6 com.google.android.apps.youtube.app.application.Shell_HomeActivity', 'd31aeb7 com.google.android.apps.youtube.app.application.InternalShell_HomeActivity', '9ed5624 com.google.android.youtube.HomeActivity', 'e24d58d com.google.android.youtube.app.application.Shell$HomeActivity', '6ce1342 com.google.android.youtube.app.honeycomb.Shell$HomeActivity', '6a87f53 com.google.android.apps.youtube.app.application.Shell_UrlActivity', '9bbb090 com.google.android.apps.youtube.app.application.Shell$UrlActivity', '4163d89 com.google.android.youtube.UrlActivity', '52e218e com.google.android.youtube.InternalUrlActivity', '4b1bdaf com.google.android.apps.youtube.app.application.Shell_ResultsActivity', 'bd345bc com.google.android.apps.youtube.app.application.Shell$ResultsActivity', '39c2945 com.google.android.apps.youtube.app.application.Shell_MediaSearchActivity', 'e6ec89a com.google.android.apps.youtube.app.application.Shell$MediaSearchActivity', '76685cb com.google.android.apps.youtube.app.application.Shell_UploadActivity', '96d01a8 com.google.android.youtube.UploadIntentHandlingActivity', '9db14c1 com.google.android.apps.youtube.app.application.Shell$UploadActivity', 'e0d466 com.google.android.apps.youtube.app.application.Shell_LiveCreationActivity', 'd55b3a7 com.google.android.apps.youtube.app.application.Shell$LiveCreationActivity', '4649054 com.google.android.apps.youtube.app.application.Shell_SettingsActivity', '7c33bfd com.google.android.apps.youtube.app.application.Shell$SettingsActivity', 'd15d0f2 com.google.android.youtube.ManageNetworkUsageActivity', '51fe343 com.google.android.apps.youtube.app.application.upgrade.NewVersionAvailableActivity', 'ea45dc0 com.google.android.apps.youtube.app.extensions.creationmodes.main.CreationModesActivity', '30c9af9 com.google.android.libraries.youtube.edit.audioswap.ui.AudioSelectionActivity', '92c0a3e com.google.android.apps.youtube.app.extensions.posts.creation.PostsCreationActivity', 'd3709f com.google.android.apps.youtube.app.extensions.reel.creation.shorts.activity.ShortsCreationActivity', '5195ec com.google.android.apps.youtube.app.extensions.reel.edit.activity.ReelCameraActivity', 'af2edb5 com.google.android.apps.youtube.app.extensions.reel.watch.activity.ReelWatchActivity', 'da8c4a com.google.android.apps.youtube.app.extensions.upload.EditVideoActivity', 'b0877bb com.google.android.apps.youtube.app.extensions.upload.UploadActivity', 'b824d8 com.google.android.apps.youtube.app.search.voice.VoiceSearchActivity', 'b1b031 com.google.android.apps.youtube.app.search.voice.VoiceSearchActivityV2', '23d2316 com.google.android.apps.youtube.app.settings.datasaving.DataSavingSettingsActivity', 'dbcd497 com.google.android.apps.youtube.app.settings.offline.activity.SmartDownloadsStorageControlsActivity', '5f6b684 com.google.android.apps.youtube.app.settings.SettingsActivity', '3c01e6d com.google.android.apps.youtube.app.settings.videoquality.VideoQualitySettingsActivity', '7605aa2 com.google.android.apps.youtube.app.vr.LaunchYouTubeVrActivity', 'af02333 com.google.android.apps.youtube.app.watchwhile.MainActivity', '6ab6f0 com.google.android.apps.youtube.app.watchwhile.WatchWhileActivity', '1cd3469 com.google.android.apps.youtube.app.watchwhile.InternalMainActivity', '8d7eee com.google.android.apps.youtube.app.WatchWhileActivity', 'effbf8f com.google.android.apps.youtube.app.webviewfallback.WebViewFallbackActivity', '6dc521c com.google.android.gms.gmscompliance.ui.UncertifiedDeviceActivity', 'a7bae25 com.google.android.gms.common.api.GoogleApiActivity', 'b569bfa com.google.android.libraries.notifications.entrypoints.systemtray.SystemTrayActivity', '4c2c5ab com.google.android.libraries.onegoogle.accountmanagement.AddAccountActivity', '6a7408 com.google.android.libraries.parenttools.youtube.ParentToolsActivity', 'ede07a1 com.android.billingclient.api.ProxyBillingActivity', '2627dc6 com.google.android.libraries.social.licenses.LicenseMenuActivity', '3661187 com.google.android.libraries.social.licenses.LicenseActivity', '136c8b4 com.google.android.libraries.user.profile.photopicker.edit.EditActivity', '4b27cdd com.google.android.libraries.user.profile.photopicker.picker.intentonly.PhotoPickerIntentActivity', '1f8b052 com.google.android.libraries.user.profile.photopicker.picker.intentonly.webview.PhotoPickerWebViewIntentActivity', 'e083f23 com.google.android.libraries.youtube.account.linking.GalFlowActivity', '4d1bc20 com.google.android.libraries.youtube.account.verification.ui.PhoneVerificationActivity', '55f09d9 com.google.android.libraries.youtube.livecreation.ui.LiveCreationActivity', '54d7f9e com.google.android.libraries.youtube.mdx.manualpairing.PairWithTvActivity', '115aa7f com.google.android.libraries.youtube.mdx.smartremote.MdxSmartRemoteActivity', 'd667a4c com.google.android.libraries.youtube.mdx.tvsignin.TvSignInActivity', 'ad6a95 com.google.android.libraries.youtube.metadataeditor.thumbnail.activity.ShortsEditThumbnailActivity', '48df7aa com.google.cardboard.sdk.QrCodeCaptureActivity', '9646f9b com.google.cardboard.sdk.HeadsetDetectionActivity'",,"ActivityInfo{e5c6d50 com.google.android.libraries.youtube.player.ui.mediasession.MediaButtonIntentReceiverProvider$DefaultMediaButtonIntentReceiver}
+ActivityInfo{2891b49 com.google.android.libraries.youtube.notification.NotificationInteractionBroadcastReceiver}
+ActivityInfo{e270c4e com.google.android.apps.youtube.app.application.backup.PackageReplacedReceiver}
+ActivityInfo{eb4316f com.google.android.apps.youtube.app.widget.YtQuickActionsWidgetProvider}
+ActivityInfo{4a30e7c com.google.android.apps.youtube.app.widget.YtSearchWidgetProvider}
+ActivityInfo{7bf2305 com.google.android.gms.measurement.AppMeasurementReceiver}
+ActivityInfo{3eb9f5a com.google.android.libraries.notifications.entrypoints.blockstatechanged.BlockStateChangedReceiver}
+ActivityInfo{f7c758b com.google.android.libraries.notifications.entrypoints.systemtray.SystemTrayBroadcastReceiver}
+ActivityInfo{8509668 com.google.android.libraries.notifications.platform.entrypoints.accountchanged.AccountChangedReceiver}
+ActivityInfo{493ea81 com.google.android.libraries.notifications.platform.entrypoints.localechanged.LocaleChangedReceiver}
+ActivityInfo{5345726 com.google.android.libraries.notifications.platform.entrypoints.push.PushReceiver}
+ActivityInfo{73adf67 com.google.android.libraries.notifications.platform.entrypoints.restart.RestartReceiver}
+ActivityInfo{4ccb114 com.google.android.libraries.notifications.platform.entrypoints.timezonechanged.TimezoneChangedReceiver}
+ActivityInfo{293adbd com.google.android.libraries.notifications.platform.entrypoints.update.UpdateReceiver}
+ActivityInfo{4febfb2 com.google.android.libraries.performance.primes.transmitter.LifeboatReceiver}
+ActivityInfo{48c0b03 com.google.android.libraries.phenotype.client.stable.AccountRemovedBroadcastReceiver}
+ActivityInfo{24dca80 com.google.android.libraries.phenotype.client.stable.PhenotypeUpdateBackgroundBroadcastReceiver}
+ActivityInfo{dd268b9 com.google.android.libraries.youtube.account.service.AccountsChangedReceiver}
+ActivityInfo{69524fe com.google.android.libraries.youtube.common.locale.LocaleChangedBroadcastReceiver}
+ActivityInfo{93a545f com.google.android.libraries.youtube.mdx.background.MdxBackgroundPlaybackBroadcastReceiver}
+ActivityInfo{4050eac com.google.android.libraries.youtube.mdx.background.MdxBackgroundScanBootReceiver}
+ActivityInfo{5a7d775 com.google.android.libraries.youtube.mdx.notification.continueontv.ContinueWatchingOnTvNotificationBroadcastReceiver}
+ActivityInfo{59a930a com.google.android.libraries.youtube.rendering.customtabs.CustomTabsReceiver}
+ActivityInfo{f59d77b com.google.android.libraries.youtube.share.endpoint.ShareLoggingBroadcastReceiver}
+ActivityInfo{d0a6998 com.google.firebase.iid.FirebaseInstanceIdReceiver}
+ActivityInfo{d2b75f1 androidx.work.impl.utils.ForceStopRunnable$BroadcastReceiver}
+ActivityInfo{2d6d5d6 androidx.work.impl.background.systemalarm.RescheduleReceiver}
+ActivityInfo{4247057 androidx.work.impl.diagnostics.DiagnosticsReceiver}",Real permission information,,
+6,,,1.0,20.0,0.0,82.0,20.0,0.0,0.0,100.0,0.0,0.0,100.0,22036.0,85859.0,70036.0,15932.0,196.0,0.0,0.0,25.0,0.0,25.0,50.0,1.0,1.0,1.0,87023.0,17114.0,664.0,17064.0,86456.0,4524.0,86876.0,71200.0,15676.0,22068.0,8721065.0,9143.0,1497496.0,6391.0,"GET /api/users
+POST /api/login
+PUT /api/users/1
+DELETE /api/users/1","android.permission.READ_MEDIA_VISUAL_USER_SELECTED
+android.permission.INTERNET
+android.permission.ACCESS_NETWORK_STATE
+android.permission.ACCESS_WIFI_STATE
+android.permission.WRITE_EXTERNAL_STORAGE
+android.permission.READ_MEDIA_IMAGES
+android.permission.READ_MEDIA_VIDEO
+android.permission.RECEIVE_BOOT_COMPLETED
+android.permission.MANAGE_DOCUMENTS
+android.permission.GET_ACCOUNTS
+com.google.android.providers.gsf.permission.READ_GSERVICES
+com.google.android.c2dm.permission.RECEIVE
+android.permission.WAKE_LOCK
+android.permission.NFC
+android.permission.CAMERA
+android.permission.FOREGROUND_SERVICE_CAMERA
+android.permission.FOREGROUND_SERVICE_MEDIA_PROJECTION
+android.permission.FOREGROUND_SERVICE_MICROPHONE
+android.permission.VIBRATE
+com.google.android.gms.permission.AD_ID_NOTIFICATION
+com.google.android.gms.permission.AD_ID
+com.google.android.youtube.permission.C2D_MESSAGE
+android.permission.GET_PACKAGE_SIZE
+android.permission.FOREGROUND_SERVICE
+android.permission.FOREGROUND_SERVICE_DATA_SYNC
+android.permission.FOREGROUND_SERVICE_MEDIA_PLAYBACK
+android.permission.RUN_USER_INITIATED_JOBS
+android.permission.USE_FINGERPRINT
+android.permission.USE_BIOMETRIC
+android.permission.MODIFY_AUDIO_SETTINGS
+android.permission.READ_CONTACTS
+android.permission.ACCESS_FINE_LOCATION
+android.permission.ACCESS_COARSE_LOCATION
+android.permission.RECORD_AUDIO
+android.permission.READ_PHONE_STATE
+android.permission.SYSTEM_ALERT_WINDOW
+android.permission.HIGH_SAMPLING_RATE_SENSORS
+com.sec.android.provider.badge.permission.READ
+com.sec.android.provider.badge.permission.WRITE
+com.htc.launcher.permission.READ_SETTINGS
+com.htc.launcher.permission.UPDATE_SHORTCUT
+com.sonyericsson.home.permission.BROADCAST_BADGE
+com.sonymobile.home.permission.PROVIDER_INSERT_BADGE
+android.permission.POST_NOTIFICATIONS
+android.permission.ACCESS_ADSERVICES_ATTRIBUTION
+android.permission.ACCESS_ADSERVICES_AD_ID
+com.google.android.youtube.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION
+com.android.vending.BILLING
+android.permission.READ_EXTERNAL_STORAGE",URL not found,"ContentProviderInfo{name=com.google.android.youtube.fileprovider className=com.google.android.apps.youtube.app.common.util.MainAppFileProviderCompat}
+ContentProviderInfo{name=com.google.android.youtube.SuggestionProvider className=com.google.android.apps.youtube.app.search.suggest.YouTubeSuggestionProvider}
+ContentProviderInfo{name=com.google.android.youtube.mlkitinitprovider className=com.google.mlkit.common.internal.MlKitInitProvider}
+ContentProviderInfo{name=com.google.android.youtube.photopicker_images className=com.google.android.libraries.user.profile.photopicker.common.fileprovider.PhotoPickerFileProvider}","FeatureInfo{6a6ef38 android.hardware.camera v=0 fl=0x0}
+FeatureInfo{f471b11 android.hardware.screen.portrait v=0 fl=0x0}
+FeatureInfo{babe476 android.hardware.telephony v=0 fl=0x0}
+FeatureInfo{1106a77 android.hardware.microphone v=0 fl=0x0}
+FeatureInfo{377c6e4 android.hardware.location v=0 fl=0x0}
+FeatureInfo{f1574d android.hardware.location.gps v=0 fl=0x0}
+FeatureInfo{1e9d202 android.hardware.location.network v=0 fl=0x0}
+FeatureInfo{e173713 glEsVers=2.0 fl=0x1}",,"'58c4de com.google.android.libraries.youtube.player.features.gl.vr.VrWelcomeActivity', '67ba6bf com.google.android.libraries.youtube.edit.gallery.GalleryActivity', '62e618c com.google.android.libraries.youtube.account.image.CropActivity', '1c060d5 com.google.android.libraries.youtube.comment.image.ImageGalleryActivity', '62850ea com.google.android.libraries.accountlinking.activity.AccountLinkingActivity', '6cdefdb com.google.android.youtube.api.StandalonePlayerActivity', '3260a78 com.google.android.libraries.youtube.notification.push.optoutdialog.NotificationOptOutDialogActivity', '333551 com.google.android.play.core.common.PlayCoreDialogWrapperActivity', 'b291b6 com.google.android.apps.youtube.app.application.Shell_HomeActivity', 'd31aeb7 com.google.android.apps.youtube.app.application.InternalShell_HomeActivity', '9ed5624 com.google.android.youtube.HomeActivity', 'e24d58d com.google.android.youtube.app.application.Shell$HomeActivity', '6ce1342 com.google.android.youtube.app.honeycomb.Shell$HomeActivity', '6a87f53 com.google.android.apps.youtube.app.application.Shell_UrlActivity', '9bbb090 com.google.android.apps.youtube.app.application.Shell$UrlActivity', '4163d89 com.google.android.youtube.UrlActivity', '52e218e com.google.android.youtube.InternalUrlActivity', '4b1bdaf com.google.android.apps.youtube.app.application.Shell_ResultsActivity', 'bd345bc com.google.android.apps.youtube.app.application.Shell$ResultsActivity', '39c2945 com.google.android.apps.youtube.app.application.Shell_MediaSearchActivity', 'e6ec89a com.google.android.apps.youtube.app.application.Shell$MediaSearchActivity', '76685cb com.google.android.apps.youtube.app.application.Shell_UploadActivity', '96d01a8 com.google.android.youtube.UploadIntentHandlingActivity', '9db14c1 com.google.android.apps.youtube.app.application.Shell$UploadActivity', 'e0d466 com.google.android.apps.youtube.app.application.Shell_LiveCreationActivity', 'd55b3a7 com.google.android.apps.youtube.app.application.Shell$LiveCreationActivity', '4649054 com.google.android.apps.youtube.app.application.Shell_SettingsActivity', '7c33bfd com.google.android.apps.youtube.app.application.Shell$SettingsActivity', 'd15d0f2 com.google.android.youtube.ManageNetworkUsageActivity', '51fe343 com.google.android.apps.youtube.app.application.upgrade.NewVersionAvailableActivity', 'ea45dc0 com.google.android.apps.youtube.app.extensions.creationmodes.main.CreationModesActivity', '30c9af9 com.google.android.libraries.youtube.edit.audioswap.ui.AudioSelectionActivity', '92c0a3e com.google.android.apps.youtube.app.extensions.posts.creation.PostsCreationActivity', 'd3709f com.google.android.apps.youtube.app.extensions.reel.creation.shorts.activity.ShortsCreationActivity', '5195ec com.google.android.apps.youtube.app.extensions.reel.edit.activity.ReelCameraActivity', 'af2edb5 com.google.android.apps.youtube.app.extensions.reel.watch.activity.ReelWatchActivity', 'da8c4a com.google.android.apps.youtube.app.extensions.upload.EditVideoActivity', 'b0877bb com.google.android.apps.youtube.app.extensions.upload.UploadActivity', 'b824d8 com.google.android.apps.youtube.app.search.voice.VoiceSearchActivity', 'b1b031 com.google.android.apps.youtube.app.search.voice.VoiceSearchActivityV2', '23d2316 com.google.android.apps.youtube.app.settings.datasaving.DataSavingSettingsActivity', 'dbcd497 com.google.android.apps.youtube.app.settings.offline.activity.SmartDownloadsStorageControlsActivity', '5f6b684 com.google.android.apps.youtube.app.settings.SettingsActivity', '3c01e6d com.google.android.apps.youtube.app.settings.videoquality.VideoQualitySettingsActivity', '7605aa2 com.google.android.apps.youtube.app.vr.LaunchYouTubeVrActivity', 'af02333 com.google.android.apps.youtube.app.watchwhile.MainActivity', '6ab6f0 com.google.android.apps.youtube.app.watchwhile.WatchWhileActivity', '1cd3469 com.google.android.apps.youtube.app.watchwhile.InternalMainActivity', '8d7eee com.google.android.apps.youtube.app.WatchWhileActivity', 'effbf8f com.google.android.apps.youtube.app.webviewfallback.WebViewFallbackActivity', '6dc521c com.google.android.gms.gmscompliance.ui.UncertifiedDeviceActivity', 'a7bae25 com.google.android.gms.common.api.GoogleApiActivity', 'b569bfa com.google.android.libraries.notifications.entrypoints.systemtray.SystemTrayActivity', '4c2c5ab com.google.android.libraries.onegoogle.accountmanagement.AddAccountActivity', '6a7408 com.google.android.libraries.parenttools.youtube.ParentToolsActivity', 'ede07a1 com.android.billingclient.api.ProxyBillingActivity', '2627dc6 com.google.android.libraries.social.licenses.LicenseMenuActivity', '3661187 com.google.android.libraries.social.licenses.LicenseActivity', '136c8b4 com.google.android.libraries.user.profile.photopicker.edit.EditActivity', '4b27cdd com.google.android.libraries.user.profile.photopicker.picker.intentonly.PhotoPickerIntentActivity', '1f8b052 com.google.android.libraries.user.profile.photopicker.picker.intentonly.webview.PhotoPickerWebViewIntentActivity', 'e083f23 com.google.android.libraries.youtube.account.linking.GalFlowActivity', '4d1bc20 com.google.android.libraries.youtube.account.verification.ui.PhoneVerificationActivity', '55f09d9 com.google.android.libraries.youtube.livecreation.ui.LiveCreationActivity', '54d7f9e com.google.android.libraries.youtube.mdx.manualpairing.PairWithTvActivity', '115aa7f com.google.android.libraries.youtube.mdx.smartremote.MdxSmartRemoteActivity', 'd667a4c com.google.android.libraries.youtube.mdx.tvsignin.TvSignInActivity', 'ad6a95 com.google.android.libraries.youtube.metadataeditor.thumbnail.activity.ShortsEditThumbnailActivity', '48df7aa com.google.cardboard.sdk.QrCodeCaptureActivity', '9646f9b com.google.cardboard.sdk.HeadsetDetectionActivity'",,"ActivityInfo{e5c6d50 com.google.android.libraries.youtube.player.ui.mediasession.MediaButtonIntentReceiverProvider$DefaultMediaButtonIntentReceiver}
+ActivityInfo{2891b49 com.google.android.libraries.youtube.notification.NotificationInteractionBroadcastReceiver}
+ActivityInfo{e270c4e com.google.android.apps.youtube.app.application.backup.PackageReplacedReceiver}
+ActivityInfo{eb4316f com.google.android.apps.youtube.app.widget.YtQuickActionsWidgetProvider}
+ActivityInfo{4a30e7c com.google.android.apps.youtube.app.widget.YtSearchWidgetProvider}
+ActivityInfo{7bf2305 com.google.android.gms.measurement.AppMeasurementReceiver}
+ActivityInfo{3eb9f5a com.google.android.libraries.notifications.entrypoints.blockstatechanged.BlockStateChangedReceiver}
+ActivityInfo{f7c758b com.google.android.libraries.notifications.entrypoints.systemtray.SystemTrayBroadcastReceiver}
+ActivityInfo{8509668 com.google.android.libraries.notifications.platform.entrypoints.accountchanged.AccountChangedReceiver}
+ActivityInfo{493ea81 com.google.android.libraries.notifications.platform.entrypoints.localechanged.LocaleChangedReceiver}
+ActivityInfo{5345726 com.google.android.libraries.notifications.platform.entrypoints.push.PushReceiver}
+ActivityInfo{73adf67 com.google.android.libraries.notifications.platform.entrypoints.restart.RestartReceiver}
+ActivityInfo{4ccb114 com.google.android.libraries.notifications.platform.entrypoints.timezonechanged.TimezoneChangedReceiver}
+ActivityInfo{293adbd com.google.android.libraries.notifications.platform.entrypoints.update.UpdateReceiver}
+ActivityInfo{4febfb2 com.google.android.libraries.performance.primes.transmitter.LifeboatReceiver}
+ActivityInfo{48c0b03 com.google.android.libraries.phenotype.client.stable.AccountRemovedBroadcastReceiver}
+ActivityInfo{24dca80 com.google.android.libraries.phenotype.client.stable.PhenotypeUpdateBackgroundBroadcastReceiver}
+ActivityInfo{dd268b9 com.google.android.libraries.youtube.account.service.AccountsChangedReceiver}
+ActivityInfo{69524fe com.google.android.libraries.youtube.common.locale.LocaleChangedBroadcastReceiver}
+ActivityInfo{93a545f com.google.android.libraries.youtube.mdx.background.MdxBackgroundPlaybackBroadcastReceiver}
+ActivityInfo{4050eac com.google.android.libraries.youtube.mdx.background.MdxBackgroundScanBootReceiver}
+ActivityInfo{5a7d775 com.google.android.libraries.youtube.mdx.notification.continueontv.ContinueWatchingOnTvNotificationBroadcastReceiver}
+ActivityInfo{59a930a com.google.android.libraries.youtube.rendering.customtabs.CustomTabsReceiver}
+ActivityInfo{f59d77b com.google.android.libraries.youtube.share.endpoint.ShareLoggingBroadcastReceiver}
+ActivityInfo{d0a6998 com.google.firebase.iid.FirebaseInstanceIdReceiver}
+ActivityInfo{d2b75f1 androidx.work.impl.utils.ForceStopRunnable$BroadcastReceiver}
+ActivityInfo{2d6d5d6 androidx.work.impl.background.systemalarm.RescheduleReceiver}
+ActivityInfo{4247057 androidx.work.impl.diagnostics.DiagnosticsReceiver}",Real permission information,,
+7,,,10.0,5.5,15.0,20.0,25.0,30.0,35.0,40.0,45.5,50.5,55.5,60.0,65.5,10.2,70.0,75.0,80.0,85.0,90.0,95.0,100.0,105.0,110.0,115.0,120.0,125.5,130.5,135.5,140.5,145.5,150.5,155.5,160.5,165.5,170.5,175.0,180.0,185.0,190.0,Some API Call,Some Permission,http://example.com,Some Provider,Some Feature,Some Intent,'Some Activity',Some Call,Some Service Receiver,"Some Real Permission
+ Some Real Permission",,
+8,,,10.0,5.5,15.0,20.0,25.0,30.0,35.0,40.0,45.5,50.5,55.5,60.0,65.5,10.2,70.0,75.0,80.0,85.0,90.0,95.0,100.0,105.0,110.0,115.0,120.0,125.5,130.5,135.5,140.5,145.5,150.5,155.5,160.5,165.5,170.5,175.0,180.0,185.0,190.0,Some API Call,Some Permission,http://example.com,Some Provider,Some Feature,Some Intent,'Some Activity',Some Call,Some Service Receiver,"Some Real Permission
+ Some Real Permission",,
+9,,,1.0,13.0,0.0,76.0,13.0,0.0,0.0,100.0,0.0,0.0,100.0,19301.0,75630.0,63184.0,12208.0,196.0,0.0,0.0,25.0,0.0,25.0,50.0,1.0,1.0,1.0,78657.0,14971.0,856.0,14876.0,82816.0,4000.0,78501.0,66084.0,12417.0,19354.0,8730044.0,9193.0,1514187.0,6422.0,"GET /api/users
+POST /api/login
+PUT /api/users/1
+DELETE /api/users/1","android.permission.READ_MEDIA_VISUAL_USER_SELECTED
+android.permission.INTERNET
+android.permission.ACCESS_NETWORK_STATE
+android.permission.ACCESS_WIFI_STATE
+android.permission.WRITE_EXTERNAL_STORAGE
+android.permission.READ_MEDIA_IMAGES
+android.permission.READ_MEDIA_VIDEO
+android.permission.RECEIVE_BOOT_COMPLETED
+android.permission.MANAGE_DOCUMENTS
+android.permission.GET_ACCOUNTS
+com.google.android.providers.gsf.permission.READ_GSERVICES
+com.google.android.c2dm.permission.RECEIVE
+android.permission.WAKE_LOCK
+android.permission.NFC
+android.permission.CAMERA
+android.permission.FOREGROUND_SERVICE_CAMERA
+android.permission.FOREGROUND_SERVICE_MEDIA_PROJECTION
+android.permission.FOREGROUND_SERVICE_MICROPHONE
+android.permission.VIBRATE
+com.google.android.gms.permission.AD_ID_NOTIFICATION
+com.google.android.gms.permission.AD_ID
+com.google.android.youtube.permission.C2D_MESSAGE
+android.permission.GET_PACKAGE_SIZE
+android.permission.FOREGROUND_SERVICE
+android.permission.FOREGROUND_SERVICE_DATA_SYNC
+android.permission.FOREGROUND_SERVICE_MEDIA_PLAYBACK
+android.permission.RUN_USER_INITIATED_JOBS
+android.permission.USE_FINGERPRINT
+android.permission.USE_BIOMETRIC
+android.permission.MODIFY_AUDIO_SETTINGS
+android.permission.READ_CONTACTS
+android.permission.ACCESS_FINE_LOCATION
+android.permission.ACCESS_COARSE_LOCATION
+android.permission.RECORD_AUDIO
+android.permission.READ_PHONE_STATE
+android.permission.SYSTEM_ALERT_WINDOW
+android.permission.HIGH_SAMPLING_RATE_SENSORS
+com.sec.android.provider.badge.permission.READ
+com.sec.android.provider.badge.permission.WRITE
+com.htc.launcher.permission.READ_SETTINGS
+com.htc.launcher.permission.UPDATE_SHORTCUT
+com.sonyericsson.home.permission.BROADCAST_BADGE
+com.sonymobile.home.permission.PROVIDER_INSERT_BADGE
+android.permission.POST_NOTIFICATIONS
+android.permission.ACCESS_ADSERVICES_ATTRIBUTION
+android.permission.ACCESS_ADSERVICES_AD_ID
+com.google.android.youtube.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION
+com.android.vending.BILLING
+android.permission.READ_EXTERNAL_STORAGE",URL not found,"ContentProviderInfo{name=com.google.android.youtube.fileprovider className=com.google.android.apps.youtube.app.common.util.MainAppFileProviderCompat}
+ContentProviderInfo{name=com.google.android.youtube.SuggestionProvider className=com.google.android.apps.youtube.app.search.suggest.YouTubeSuggestionProvider}
+ContentProviderInfo{name=com.google.android.youtube.mlkitinitprovider className=com.google.mlkit.common.internal.MlKitInitProvider}
+ContentProviderInfo{name=com.google.android.youtube.photopicker_images className=com.google.android.libraries.user.profile.photopicker.common.fileprovider.PhotoPickerFileProvider}","FeatureInfo{9f23128 android.hardware.camera v=0 fl=0x0}
+FeatureInfo{4094e41 android.hardware.screen.portrait v=0 fl=0x0}
+FeatureInfo{5144fe6 android.hardware.telephony v=0 fl=0x0}
+FeatureInfo{be24927 android.hardware.microphone v=0 fl=0x0}
+FeatureInfo{ccd37d4 android.hardware.location v=0 fl=0x0}
+FeatureInfo{c5b8d7d android.hardware.location.gps v=0 fl=0x0}
+FeatureInfo{3c58472 android.hardware.location.network v=0 fl=0x0}
+FeatureInfo{ba050c3 glEsVers=2.0 fl=0x1}",,"'d84024e com.google.android.libraries.youtube.player.features.gl.vr.VrWelcomeActivity', '3cef6f com.google.android.libraries.youtube.edit.gallery.GalleryActivity', '9bff47c com.google.android.libraries.youtube.account.image.CropActivity', '7211105 com.google.android.libraries.youtube.comment.image.ImageGalleryActivity', 'b21f55a com.google.android.libraries.accountlinking.activity.AccountLinkingActivity', '3d3138b com.google.android.youtube.api.StandalonePlayerActivity', '955dc68 com.google.android.libraries.youtube.notification.push.optoutdialog.NotificationOptOutDialogActivity', '326b881 com.google.android.play.core.common.PlayCoreDialogWrapperActivity', '87a0d26 com.google.android.apps.youtube.app.application.Shell_HomeActivity', 'd5d5d67 com.google.android.apps.youtube.app.application.InternalShell_HomeActivity', '7e05714 com.google.android.youtube.HomeActivity', '2855bbd com.google.android.youtube.app.application.Shell$HomeActivity', '5e9d5b2 com.google.android.youtube.app.honeycomb.Shell$HomeActivity', 'd586903 com.google.android.apps.youtube.app.application.Shell_UrlActivity', '9f5d080 com.google.android.apps.youtube.app.application.Shell$UrlActivity', '630f6b9 com.google.android.youtube.UrlActivity', 'a1b9afe com.google.android.youtube.InternalUrlActivity', '56e925f com.google.android.apps.youtube.app.application.Shell_ResultsActivity', '52774ac com.google.android.apps.youtube.app.application.Shell$ResultsActivity', '614575 com.google.android.apps.youtube.app.application.Shell_MediaSearchActivity', 'a12690a com.google.android.apps.youtube.app.application.Shell$MediaSearchActivity', 'd93f57b com.google.android.apps.youtube.app.application.Shell_UploadActivity', '4ed2f98 com.google.android.youtube.UploadIntentHandlingActivity', '50dc3f1 com.google.android.apps.youtube.app.application.Shell$UploadActivity', '5f60bd6 com.google.android.apps.youtube.app.application.Shell_LiveCreationActivity', 'ee26e57 com.google.android.apps.youtube.app.application.Shell$LiveCreationActivity', '251ad44 com.google.android.apps.youtube.app.application.Shell_SettingsActivity', '629ae2d com.google.android.apps.youtube.app.application.Shell$SettingsActivity', '69f0f62 com.google.android.youtube.ManageNetworkUsageActivity', '3598f3 com.google.android.apps.youtube.app.application.upgrade.NewVersionAvailableActivity', 'a5e59b0 com.google.android.apps.youtube.app.extensions.creationmodes.main.CreationModesActivity', '7a00029 com.google.android.libraries.youtube.edit.audioswap.ui.AudioSelectionActivity', '7e2bfae com.google.android.apps.youtube.app.extensions.posts.creation.PostsCreationActivity', '86d14f com.google.android.apps.youtube.app.extensions.reel.creation.shorts.activity.ShortsCreationActivity', '4760dc com.google.android.apps.youtube.app.extensions.reel.edit.activity.ReelCameraActivity', '70f75e5 com.google.android.apps.youtube.app.extensions.reel.watch.activity.ReelWatchActivity', 'b9f28ba com.google.android.apps.youtube.app.extensions.upload.EditVideoActivity', 'b09336b com.google.android.apps.youtube.app.extensions.upload.UploadActivity', '57aec8 com.google.android.apps.youtube.app.search.voice.VoiceSearchActivity', '3468b61 com.google.android.apps.youtube.app.search.voice.VoiceSearchActivityV2', '1871686 com.google.android.apps.youtube.app.settings.datasaving.DataSavingSettingsActivity', '1059b47 com.google.android.apps.youtube.app.settings.offline.activity.SmartDownloadsStorageControlsActivity', '49cef74 com.google.android.apps.youtube.app.settings.SettingsActivity', '7f7c9d com.google.android.apps.youtube.app.settings.videoquality.VideoQualitySettingsActivity', 'ae1512 com.google.android.apps.youtube.app.vr.LaunchYouTubeVrActivity', '576a4e3 com.google.android.apps.youtube.app.watchwhile.MainActivity', '4538ee0 com.google.android.apps.youtube.app.watchwhile.WatchWhileActivity', 'e5c4599 com.google.android.apps.youtube.app.watchwhile.InternalMainActivity', '7d4705e com.google.android.apps.youtube.app.WatchWhileActivity', '664ac3f com.google.android.apps.youtube.app.webviewfallback.WebViewFallbackActivity', 'd12b90c com.google.android.gms.gmscompliance.ui.UncertifiedDeviceActivity', 'a2a255 com.google.android.gms.common.api.GoogleApiActivity', '573346a com.google.android.libraries.notifications.entrypoints.systemtray.SystemTrayActivity', '1cd5b com.google.android.libraries.onegoogle.accountmanagement.AddAccountActivity', 'b859f8 com.google.android.libraries.parenttools.youtube.ParentToolsActivity', '3b80ed1 com.android.billingclient.api.ProxyBillingActivity', '882d36 com.google.android.libraries.social.licenses.LicenseMenuActivity', '585e437 com.google.android.libraries.social.licenses.LicenseActivity', '151da4 com.google.android.libraries.user.profile.photopicker.edit.EditActivity', 'bddc70d com.google.android.libraries.user.profile.photopicker.picker.intentonly.PhotoPickerIntentActivity', '121e6c2 com.google.android.libraries.user.profile.photopicker.picker.intentonly.webview.PhotoPickerWebViewIntentActivity', 'bca8cd3 com.google.android.libraries.youtube.account.linking.GalFlowActivity', 'a587010 com.google.android.libraries.youtube.account.verification.ui.PhoneVerificationActivity', '62cc709 com.google.android.libraries.youtube.livecreation.ui.LiveCreationActivity', 'abad0e com.google.android.libraries.youtube.mdx.manualpairing.PairWithTvActivity', '1a7232f com.google.android.libraries.youtube.mdx.smartremote.MdxSmartRemoteActivity', '63c7d3c com.google.android.libraries.youtube.mdx.tvsignin.TvSignInActivity', 'e51cac5 com.google.android.libraries.youtube.metadataeditor.thumbnail.activity.ShortsEditThumbnailActivity', 'df98c1a com.google.cardboard.sdk.QrCodeCaptureActivity', '20cc34b com.google.cardboard.sdk.HeadsetDetectionActivity'",,"ActivityInfo{5affd40 com.google.android.libraries.youtube.player.ui.mediasession.MediaButtonIntentReceiverProvider$DefaultMediaButtonIntentReceiver}
+ActivityInfo{a988479 com.google.android.libraries.youtube.notification.NotificationInteractionBroadcastReceiver}
+ActivityInfo{9e375be com.google.android.apps.youtube.app.application.backup.PackageReplacedReceiver}
+ActivityInfo{2ad361f com.google.android.apps.youtube.app.widget.YtQuickActionsWidgetProvider}
+ActivityInfo{537ad6c com.google.android.apps.youtube.app.widget.YtSearchWidgetProvider}
+ActivityInfo{d13ef35 com.google.android.gms.measurement.AppMeasurementReceiver}
+ActivityInfo{c5d2fca com.google.android.libraries.notifications.entrypoints.blockstatechanged.BlockStateChangedReceiver}
+ActivityInfo{879153b com.google.android.libraries.notifications.entrypoints.systemtray.SystemTrayBroadcastReceiver}
+ActivityInfo{6a83458 com.google.android.libraries.notifications.platform.entrypoints.accountchanged.AccountChangedReceiver}
+ActivityInfo{9a149b1 com.google.android.libraries.notifications.platform.entrypoints.localechanged.LocaleChangedReceiver}
+ActivityInfo{e067e96 com.google.android.libraries.notifications.platform.entrypoints.push.PushReceiver}
+ActivityInfo{159ca17 com.google.android.libraries.notifications.platform.entrypoints.restart.RestartReceiver}
+ActivityInfo{3983e04 com.google.android.libraries.notifications.platform.entrypoints.timezonechanged.TimezoneChangedReceiver}
+ActivityInfo{5cfcfed com.google.android.libraries.notifications.platform.entrypoints.update.UpdateReceiver}
+ActivityInfo{923ee22 com.google.android.libraries.performance.primes.transmitter.LifeboatReceiver}
+ActivityInfo{726f0b3 com.google.android.libraries.phenotype.client.stable.AccountRemovedBroadcastReceiver}
+ActivityInfo{65d3670 com.google.android.libraries.phenotype.client.stable.PhenotypeUpdateBackgroundBroadcastReceiver}
+ActivityInfo{6e67de9 com.google.android.libraries.youtube.account.service.AccountsChangedReceiver}
+ActivityInfo{5b6ca6e com.google.android.libraries.youtube.common.locale.LocaleChangedBroadcastReceiver}
+ActivityInfo{f95e50f com.google.android.libraries.youtube.mdx.background.MdxBackgroundPlaybackBroadcastReceiver}
+ActivityInfo{737499c com.google.android.libraries.youtube.mdx.background.MdxBackgroundScanBootReceiver}
+ActivityInfo{5a00fa5 com.google.android.libraries.youtube.mdx.notification.continueontv.ContinueWatchingOnTvNotificationBroadcastReceiver}
+ActivityInfo{8891f7a com.google.android.libraries.youtube.rendering.customtabs.CustomTabsReceiver}
+ActivityInfo{c55c32b com.google.android.libraries.youtube.share.endpoint.ShareLoggingBroadcastReceiver}
+ActivityInfo{3d6388 com.google.firebase.iid.FirebaseInstanceIdReceiver}
+ActivityInfo{1a70121 androidx.work.impl.utils.ForceStopRunnable$BroadcastReceiver}
+ActivityInfo{6f9b946 androidx.work.impl.background.systemalarm.RescheduleReceiver}
+ActivityInfo{eb6707 androidx.work.impl.diagnostics.DiagnosticsReceiver}",Real permission information,,
+10,,,10.0,5.5,15.0,20.0,25.0,30.0,35.0,40.0,45.5,50.5,55.5,60.0,65.5,10.2,70.0,75.0,80.0,85.0,90.0,95.0,100.0,105.0,110.0,115.0,120.0,125.5,130.5,135.5,140.5,145.5,150.5,155.5,160.5,165.5,170.5,175.0,180.0,185.0,190.0,Some API Call,Some Permission,http://example.com,Some Provider,Some Feature,Some Intent,'Some Activity',Some Call,Some Service Receiver,"Some Real Permission
+ Some Real Permission",,
+11,,,10.0,5.5,15.0,20.0,25.0,30.0,35.0,40.0,45.5,50.5,55.5,60.0,65.5,10.2,70.0,75.0,80.0,85.0,90.0,95.0,100.0,105.0,110.0,115.0,120.0,125.5,130.5,135.5,140.5,145.5,150.5,155.5,160.5,165.5,170.5,175.0,180.0,185.0,190.0,Some API Call,Some Permission,http://example.com,Some Provider,Some Feature,Some Intent,'Some Activity',Some Call,Some Service Receiver,"Some Real Permission
+ Some Real Permission",,
+12,,,10.0,5.5,15.0,20.0,25.0,30.0,35.0,40.0,45.5,50.5,55.5,60.0,65.5,10.2,70.0,75.0,80.0,85.0,90.0,95.0,100.0,105.0,110.0,115.0,120.0,125.5,130.5,135.5,140.5,145.5,150.5,155.5,160.5,165.5,170.5,175.0,180.0,185.0,190.0,Some API Call,Some Permission,http://example.com,Some Provider,Some Feature,Some Intent,'Some Activity',Some Call,Some Service Receiver,"Some Real Permission
+ Some Real Permission",,
+13,,,10.0,5.5,15.0,20.0,25.0,30.0,35.0,40.0,45.5,50.5,55.5,60.0,65.5,10.2,70.0,75.0,80.0,85.0,90.0,95.0,100.0,105.0,110.0,115.0,120.0,125.5,130.5,135.5,140.5,145.5,150.5,155.5,160.5,165.5,170.5,175.0,180.0,185.0,190.0,Some API Call,Some Permission,http://example.com,Some Provider,Some Feature,Some Intent,'Some Activity',Some Call,Some Service Receiver,"Some Real Permission
+ Some Real Permission",,
+14,,,10.0,5.5,15.0,20.0,25.0,30.0,35.0,40.0,45.5,50.5,55.5,60.0,65.5,10.2,70.0,75.0,80.0,85.0,90.0,95.0,100.0,105.0,110.0,115.0,120.0,125.5,130.5,135.5,140.5,145.5,150.5,155.5,160.5,165.5,170.5,175.0,180.0,185.0,190.0,Some API Call,Some Permission,http://example.com,Some Provider,Some Feature,Some Intent,'Some Activity',Some Call,Some Service Receiver,"Some Real Permission
+ Some Real Permission",,
+15,,,10.0,5.5,15.0,20.0,25.0,30.0,35.0,40.0,45.5,50.5,55.5,60.0,65.5,10.2,70.0,75.0,80.0,85.0,90.0,95.0,100.0,105.0,110.0,115.0,120.0,125.5,130.5,135.5,140.5,145.5,150.5,155.5,160.5,165.5,170.5,175.0,180.0,185.0,190.0,Some API Call,Some Permission,http://example.com,Some Provider,Some Feature,Some Intent,'Some Activity',Some Call,Some Service Receiver,"Some Real Permission
+ Some Real Permission",,
+16,,,10.0,5.5,15.0,20.0,25.0,30.0,35.0,40.0,45.5,50.5,55.5,60.0,65.5,10.2,70.0,75.0,80.0,85.0,90.0,95.0,100.0,105.0,110.0,115.0,120.0,125.5,130.5,135.5,140.5,145.5,150.5,155.5,160.5,165.5,170.5,175.0,180.0,185.0,190.0,Some API Call,Some Permission,http://example.com,Some Provider,Some Feature,Some Intent,'Some Activity',Some Call,Some Service Receiver,"Some Real Permission
+ Some Real Permission",,
+17,,,10.0,5.5,15.0,20.0,25.0,30.0,35.0,40.0,45.5,50.5,55.5,60.0,65.5,10.2,70.0,75.0,80.0,85.0,90.0,95.0,100.0,105.0,110.0,115.0,120.0,125.5,130.5,135.5,140.5,145.5,150.5,155.5,160.5,165.5,170.5,175.0,180.0,185.0,190.0,Some API Call,Some Permission,http://example.com,Some Provider,Some Feature,Some Intent,'Some Activity',Some Call,Some Service Receiver,"Some Real Permission
+ Some Real Permission",,
+18,,,10.0,5.5,15.0,20.0,25.0,30.0,35.0,40.0,45.5,50.5,55.5,60.0,65.5,10.2,70.0,75.0,80.0,85.0,90.0,95.0,100.0,105.0,110.0,115.0,120.0,125.5,130.5,135.5,140.5,145.5,150.5,155.5,160.5,165.5,170.5,175.0,180.0,185.0,190.0,Some API Call,Some Permission,http://example.com,Some Provider,Some Feature,Some Intent,'Some Activity',Some Call,Some Service Receiver,"Some Real Permission
+ Some Real Permission",,
+19,,,10.0,5.5,15.0,20.0,25.0,30.0,35.0,40.0,45.5,50.5,55.5,60.0,65.5,10.2,70.0,75.0,80.0,85.0,90.0,95.0,100.0,105.0,110.0,115.0,120.0,125.5,130.5,135.5,140.5,145.5,150.5,155.5,160.5,165.5,170.5,175.0,180.0,185.0,190.0,Some API Call,Some Permission,http://example.com,Some Provider,Some Feature,Some Intent,'Some Activity',Some Call,Some Service Receiver,"Some Real Permission
+ Some Real Permission",,
+20,,,10.0,5.5,15.0,20.0,25.0,30.0,35.0,40.0,45.5,50.5,55.5,60.0,65.5,10.2,70.0,75.0,80.0,85.0,90.0,95.0,100.0,105.0,110.0,115.0,120.0,125.5,130.5,135.5,140.5,145.5,150.5,155.5,160.5,165.5,170.5,175.0,180.0,185.0,190.0,Some API Call,Some Permission,http://example.com,Some Provider,Some Feature,Some Intent,'Some Activity',Some Call,Some Service Receiver,"Some Real Permission
+ Some Real Permission",,
+21,,,10.0,5.5,15.0,20.0,25.0,30.0,35.0,40.0,45.5,50.5,55.5,60.0,65.5,10.2,70.0,75.0,80.0,85.0,90.0,95.0,100.0,105.0,110.0,115.0,120.0,125.5,130.5,135.5,140.5,145.5,150.5,155.5,160.5,165.5,170.5,175.0,180.0,185.0,190.0,Some API Call,Some Permission,http://example.com,Some Provider,Some Feature,Some Intent,'Some Activity',Some Call,Some Service Receiver,"Some Real Permission
+ Some Real Permission",,
+22,,,10.0,5.5,15.0,20.0,25.0,30.0,35.0,40.0,45.5,50.5,55.5,60.0,65.5,10.2,70.0,75.0,80.0,85.0,90.0,95.0,100.0,105.0,110.0,115.0,120.0,125.5,130.5,135.5,140.5,145.5,150.5,155.5,160.5,165.5,170.5,175.0,180.0,185.0,190.0,Some API Call,Some Permission,http://example.com,Some Provider,Some Feature,Some Intent,'Some Activity',Some Call,Some Service Receiver,"Some Real Permission
+ Some Real Permission",,
+23,,,10.0,5.5,15.0,20.0,25.0,30.0,35.0,40.0,45.5,50.5,55.5,60.0,65.5,10.2,70.0,75.0,80.0,85.0,90.0,95.0,100.0,105.0,110.0,115.0,120.0,125.5,130.5,135.5,140.5,145.5,150.5,155.5,160.5,165.5,170.5,175.0,180.0,185.0,190.0,Some API Call,Some Permission,http://example.com,Some Provider,Some Feature,Some Intent,'Some Activity',Some Call,Some Service Receiver,"Some Real Permission
+ Some Real Permission",,
+24,,,10.0,5.5,15.0,20.0,25.0,30.0,35.0,40.0,45.5,50.5,55.5,60.0,65.5,10.2,70.0,75.0,80.0,85.0,90.0,95.0,100.0,105.0,110.0,115.0,120.0,125.5,130.5,135.5,140.5,145.5,150.5,155.5,160.5,165.5,170.5,175.0,180.0,185.0,190.0,Some API Call,Some Permission,http://example.com,Some Provider,Some Feature,Some Intent,'Some Activity',Some Call,Some Service Receiver,"Some Real Permission
+ Some Real Permission",,
+25,,,10.0,5.5,15.0,20.0,25.0,30.0,35.0,40.0,45.5,50.5,55.5,60.0,65.5,10.2,70.0,75.0,80.0,85.0,90.0,95.0,100.0,105.0,110.0,115.0,120.0,125.5,130.5,135.5,140.5,145.5,150.5,155.5,160.5,165.5,170.5,175.0,180.0,185.0,190.0,Some API Call,Some Permission,http://example.com,Some Provider,Some Feature,Some Intent,'Some Activity',Some Call,Some Service Receiver,"Some Real Permission
+ Some Real Permission",,
+26,,,10.0,5.5,15.0,20.0,25.0,30.0,35.0,40.0,45.5,50.5,55.5,60.0,65.5,10.2,70.0,75.0,80.0,85.0,90.0,95.0,100.0,105.0,110.0,115.0,120.0,125.5,130.5,135.5,140.5,145.5,150.5,155.5,160.5,165.5,170.5,175.0,180.0,185.0,190.0,Some API Call,Some Permission,http://example.com,Some Provider,Some Feature,Some Intent,'Some Activity',Some Call,Some Service Receiver,"Some Real Permission
+ Some Real Permission",,
+27,,,10.0,5.5,15.0,20.0,25.0,30.0,35.0,40.0,45.5,50.5,55.5,60.0,65.5,10.2,70.0,75.0,80.0,85.0,90.0,95.0,100.0,105.0,110.0,115.0,120.0,125.5,130.5,135.5,140.5,145.5,150.5,155.5,160.5,165.5,170.5,175.0,180.0,185.0,190.0,Some API Call,Some Permission,http://example.com,Some Provider,Some Feature,Some Intent,'Some Activity',Some Call,Some Service Receiver,"Some Real Permission
+ Some Real Permission",,
+28,,,10.0,5.5,15.0,20.0,25.0,30.0,35.0,40.0,45.5,50.5,55.5,60.0,65.5,10.2,70.0,75.0,80.0,85.0,90.0,95.0,100.0,105.0,110.0,115.0,120.0,125.5,130.5,135.5,140.5,145.5,150.5,155.5,160.5,165.5,170.5,175.0,180.0,185.0,190.0,Some API Call,Some Permission,http://example.com,Some Provider,Some Feature,Some Intent,'Some Activity',Some Call,Some Service Receiver,"Some Real Permission
+ Some Real Permission",,
+29,,,10.0,5.5,15.0,20.0,25.0,30.0,35.0,40.0,45.5,50.5,55.5,60.0,65.5,10.2,70.0,75.0,80.0,85.0,90.0,95.0,100.0,105.0,110.0,115.0,120.0,125.5,130.5,135.5,140.5,145.5,150.5,155.5,160.5,165.5,170.5,175.0,180.0,185.0,190.0,Some API Call,Some Permission,http://example.com,Some Provider,Some Feature,Some Intent,'Some Activity',Some Call,Some Service Receiver,"Some Real Permission
+ Some Real Permission",,
+30,,,10.0,5.5,15.0,20.0,25.0,30.0,35.0,40.0,45.5,50.5,55.5,60.0,65.5,10.2,70.0,75.0,80.0,85.0,90.0,95.0,100.0,105.0,110.0,115.0,120.0,125.5,130.5,135.5,140.5,145.5,150.5,155.5,160.5,165.5,170.5,175.0,180.0,185.0,190.0,Some API Call,Some Permission,http://example.com,Some Provider,Some Feature,Some Intent,'Some Activity',Some Call,Some Service Receiver,"Some Real Permission
+ Some Real Permission",,
+31,,,10.0,5.5,15.0,20.0,25.0,30.0,35.0,40.0,45.5,50.5,55.5,60.0,65.5,10.2,70.0,75.0,80.0,85.0,90.0,95.0,100.0,105.0,110.0,115.0,120.0,125.5,130.5,135.5,140.5,145.5,150.5,155.5,160.5,165.5,170.5,175.0,180.0,185.0,190.0,Some API Call,Some Permission,http://example.com,Some Provider,Some Feature,Some Intent,'Some Activity',Some Call,Some Service Receiver,"Some Real Permission
+ Some Real Permission",,
