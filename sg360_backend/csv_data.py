@@ -4,6 +4,14 @@ import dotenv
 import os
 
 
+# TO-DO: .env file must be created in this directory, it makes the code more readable
+# Follow this format:
+
+# DB_NAME=your_db_name
+# DB_USER=your_db_user
+# db_password=your_db_password
+
+
 dotenv.load_dotenv()
 
 # Establish a connection to the PostgreSQL database

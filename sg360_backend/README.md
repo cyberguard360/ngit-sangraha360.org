@@ -1,54 +1,101 @@
-# Django REST Framework API
 
-## Getting Started
-
-1. Clone the repository
+# Django Backend 🔰
 
 
-## Table of Contents
-- [Installation](#installation)
-- [Migrations](#migrations)
-- [Running the Server](#running-the-server)
-- [Features](#features)
-  - [Login](#login)
-  - [Register](#register)
-  - [Add Data](#add-data)
-  - [Predictions](#predictions)
-  - [Add Token](#add-token)
 
-## Installation
+Django REST Framework API facilitates user authentication and data management tasks. It allows users to register, login, and receive authentication tokens for subsequent requests. Additionally, it provides endpoints for uploading data in CSV format and obtaining predictions based on that data. Overall, the app serves as a platform for users to securely manage data and access predictive analysis features.
+## Roadmap
 
-1. First make sure you have python and django installed.
-2. Clone the repository.
-3. Create a virtual environment using `python -m venv .venv`.
-4. Activate the virtual environment. (On windows `call .venv\Scripts\activate`, on linux and mac `source .venv/bin/activate`).
-5. Install the requirements using `pip install -r requirements.txt`.
+- Project Setup
 
-## Migrations
+- User Authentication
 
-Before running the server, you need to run the migrations. You can run the migrations using `python manage.py migrate`.
+- Data Management
 
-## Running the Server
+- Predictive Analysis
 
-After running the migrations, you can run the server using `python manage.py runserver`.
+- API Documentation
 
-## Features
+- Testing and Validation
 
-### Login
+- Deployment and Maintenance
 
-To login, use the `/login` endpoint and provide a valid username and password. The server will return a token, which is used in all other requests.
 
-### Register
+## API Reference
 
-To register, use the `/register` endpoint and provide a valid username and password.
+#### POST all items
 
-### Add Data and Predictions
+```http
+  POST /register
+```
 
-To add data and get predictions, use the `/project-data` endpoint and provide a valid token and data. The data should be in the form of a csv file. 
+| Parameter | Type     | Description                |
+| :-------- | :------- | :------------------------- |
+| `api_key` | `string` | **Required**. Your API key |
 
-### Add Token
 
-To add a token, use the `/token` endpoint and provide a valid username and password. This will give you a token, which can be used in all other requests.
 
-This is a basic explanation, you can find more details in the code and the API documentation.
+```http
+  POST /login
+```
+
+| Parameter | Type     | Description                       |
+| :-------- | :------- | :-------------------------------- |
+| `id`      | `string` | **Required**. Id of item to fetch |
+
+
+
+```http
+  POST /project-data
+```
+| Parameter | Type     | Description                       |
+| :-------- | :------- | :-------------------------------- |
+| `data fields`   | `string` | **Required**. To fetch Predictions |
+
+
+## Acknowledgements
+
+ - [Django User Auth](https://github.com/boxabhi/)
+
+
+
+
+## Install my-project with python
+
+### Create Virtual Environment
+
+```bash
+  python -m venv venv
+```
+
+### Use Virtual Environment
+
+```bash
+  call .venv/Scripts/activate, on linux
+  source .venv/bin/activate, on mac
+  venv/Scripts/activate, on windows
+```
+    
+
+
+### pip install requirements
+
+```bash
+  pip install -r requirements.txt
+```
+
+### migrate to database
+
+```bash
+  python manage.py makemigrations
+  python manage.py migrate
+```
+
+### start server
+
+```bash
+  python manage.py runserver
+```
+
+
 

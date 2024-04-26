@@ -21,7 +21,6 @@ from datetime import datetime
 
 # Generate Token Manually
 
-
 def get_tokens_for_user(user):
     """
     Generate tokens for a given user.
