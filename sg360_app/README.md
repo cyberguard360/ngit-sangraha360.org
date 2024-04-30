@@ -1,7 +1,7 @@
 # SG360 - Android App
 
 SG360 is Malware Detection Android Application.
-Unlike other services, wallabag is free and open source.  
+Unlike other services, SG360 is free and open source.  
 SG360 for Android is a companion app for [sangraha360](https://sangraha360.org). You need a SG360 account first, which you are going to use in this app.
 
 ## About
@@ -48,4 +48,4 @@ On Android versions prior to Android 6.0, wallabag requires the following permis
 
 ## Contributing
 
-Contributions to SG360 are welcome and encouraged! If you have any suggestions, feature requests, or bug reports, please submit them through the [issue tracker](#) of this repository. Additionally, if you'd like to contribute code, feel free to fork this repository and submit a pull request with your changes.
+Contributions to SG360 are welcome and encouraged! If you have any suggestions, feature requests, or bug reports, please submit them through the [issue tracker](https://github.com/cyberguard360/ngit-sangraha360.org/issues) of this repository. Additionally, if you'd like to contribute code, feel free to fork this repository and submit a pull request with your changes.
