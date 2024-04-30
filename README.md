@@ -7,3 +7,5 @@
 
 
 ## For Backend Django Instructions please read README of [sg360_backend](https://github.com/cyberguard360/ngit-sangraha360.org/blob/backend-Django/sg360_backend/README.md)
+
+## For Android Application Instructions please read README of [sg360_app](https://github.com/cyberguard360/ngit-sangraha360.org/blob/sg360-app/sg360_app/README.md)
