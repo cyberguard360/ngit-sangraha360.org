@@ -30,4 +30,3 @@ object SgApi {
         retrofit.create(SgApiService::class.java) // Create the SgApiService instance
     }
 }
-}

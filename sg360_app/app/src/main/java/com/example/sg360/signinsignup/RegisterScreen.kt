@@ -41,6 +41,11 @@ import com.example.sg360.R
  */
 @Composable
 fun RegisterScreen(
+    navigateToLogin: () -> Unit,
+    navigateToVerify: () -> Unit,
+    signInUiState: SignInUiState,
+    signInCall: (email: String, username:String, password: String, confirmPass: String, tc: String ) -> Unit
+){
     // Variables to hold user input
     var email by remember { mutableStateOf("") }
     var password by remember { mutableStateOf("") }
