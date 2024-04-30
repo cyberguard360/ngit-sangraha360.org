@@ -100,13 +100,10 @@ class DashBoardViewModel(
         viewModelScope.launch {
             try {
                 val accessToken = userRepository.accessToken.firstOrNull()
-                println("HElerererer$accessToken")
-                println(accessToken)
                 val headerBody = "Bearer $accessToken"
                 val username = userRepository.username.firstOrNull()
                 val dataBody = activity.appFeatures(username, selectedApp)
                 val response = SgApi.retrofitService.sendData(dataBody,headerBody)
-                println(response.toString())
                 dashBoardUiState = DashBoardUiState.Success(response) // Update state with response
             } catch (e: IOException) {
                 println(e)

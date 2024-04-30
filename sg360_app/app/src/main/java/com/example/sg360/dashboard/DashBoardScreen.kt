@@ -51,9 +51,7 @@ fun DashBoard(
         Button(
             onClick = {
                 if (selectedApp != "Select Application") {
-                    println(selectedApp)
                     sendData(selectedApp)
-                    println("Done")
                 } else {
                     // Handle case when nothing is selected
                     // For example, show a toast or display an error message

@@ -29,16 +29,6 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.sg360.R
 
-/**
- * RegisterScreen is a Composable function that displays a screen for registering a new account.
- *
- * @param navigateToLogin A lambda function that navigates to the login screen when called.
- * @param navigateToVerify A lambda function that navigates to the verification screen when called.
- * @param signInUiState The current state of the sign-in process.
- * @param signInCall A lambda function that performs the sign-in process.
- *
- * @return Unit.
- */
 @Composable
 fun RegisterScreen(
     navigateToLogin: () -> Unit,
@@ -46,49 +36,103 @@ fun RegisterScreen(
     signInUiState: SignInUiState,
     signInCall: (email: String, username:String, password: String, confirmPass: String, tc: String ) -> Unit
 ){
-    // Variables to hold user input
+
     var email by remember { mutableStateOf("") }
+
     var password by remember { mutableStateOf("") }
+
     var password2 by remember { mutableStateOf("") }
+
     var username by remember { mutableStateOf("") }
-    
-    // Variables to track errors
+
     var emailError by remember { mutableStateOf(false) }
+
     var passError by remember { mutableStateOf(false) }
-    
-    // Variables to control dialog behavior
+
     var showDialog by remember { mutableStateOf(false) }
+
     var title by remember { mutableStateOf("") }
+
     var message by remember { mutableStateOf("") }
+
     var answer by remember { mutableStateOf("") }
-    
-    // Main layout
+
     Column(
         modifier = Modifier.fillMaxSize(),
         verticalArrangement = Arrangement.Center,
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
-        // Image and greeting
-        Image(painter = painterResource(id = R.drawable.a), 
-            contentDescription = "Login image",
+        Image(painter = painterResource(id = R.drawable.a), contentDescription = "Login image",
             modifier = Modifier.size(160.dp))
+
         Text(text = "Register Here", fontSize = 28.sp, fontWeight = FontWeight.Bold)
-        
-        // Input fields
-        OutlinedTextField(value = email, 
-            onValueChange = { email = it; emailError = false }, 
-            label = { Text(text = "Email address") }, 
-            supportingText = { Text(text = "*required") }, 
-            keyboardOptions = KeyboardOptions(
-                keyboardType = KeyboardType.Email,
-                imeAction = ImeAction.Next
-            ), singleLine= true,
+
+        Spacer(modifier = Modifier.height(4.dp))
+
+        Text(text = "Register your account")
+
+        Spacer(modifier = Modifier.height(16.dp))
+
+        OutlinedTextField(value = email, onValueChange = {
+            email = it
+            emailError = false
+        }, label = {
+            Text(text = "Email address")
+        }, supportingText = {
+            Text(text = "*required")
+        }, keyboardOptions = KeyboardOptions(
+            keyboardType = KeyboardType.Email,
+            imeAction = ImeAction.Next
+        ), singleLine= true,
             isError = emailError)
-        
-        // Button to trigger registration
+
+        Spacer(modifier = Modifier.height(16.dp))
+
+        OutlinedTextField(value = username, onValueChange = {
+            username = it
+        }, label = {
+            Text(text = "Username")
+        }, keyboardOptions = KeyboardOptions(
+            imeAction = ImeAction.Next
+        ), singleLine= true)
+
+        Spacer(modifier = Modifier.height(16.dp))
+
+        OutlinedTextField(value = password, onValueChange = {
+            password = it
+            passError = false
+        }, label = {
+            Text(text = "Password")
+        }, supportingText = {
+            Text(text = "*required")
+        }, keyboardOptions = KeyboardOptions(
+            imeAction = ImeAction.Next
+        ), singleLine= true ,
+            isError =passError,
+            visualTransformation = PasswordVisualTransformation()
+        )
+
+        Spacer(modifier = Modifier.height(16.dp))
+
+        OutlinedTextField(value = password2, onValueChange = {
+            password2 = it
+            passError = false
+        }, label = {
+            Text(text = "Confirm Password")
+        }, supportingText = {
+            Text(text = "*required")
+        }, keyboardOptions = KeyboardOptions(
+            imeAction = ImeAction.Next
+        ), singleLine= true,
+            isError = password != password2,
+            visualTransformation = PasswordVisualTransformation()
+        )
+
+        Spacer(modifier = Modifier.height(16.dp))
+
         Button(onClick = {
-            // Check input validity and set errors if needed
             if (!email.contains("@gmail.com")) {
+                // Set showDialog to true to show the error dialog
                 emailError = true
                 showDialog = true
                 answer = "Okay"
@@ -107,18 +151,18 @@ fun RegisterScreen(
                 title = "Password invalid"
                 message = "Password should be same"
             }
-            // Proceed with registration if no errors
             if (!emailError && !passError) {
+                // No errors, navigate to the desired route
                 if (username.isEmpty()) {
                     username = email.split('@').getOrElse(0) { "" }
                 }
+                // Proceed with registration
                 signInCall(email, username, password, password2, "True")
             }
         }) {
             Text(text = "Register")
         }
-        
-        // Display error dialog if needed
+
         if (showDialog) {
             ShowDialog(
                 title = title,
@@ -127,11 +171,13 @@ fun RegisterScreen(
                 onDismiss = { showDialog = false }
             )
         }
-        
-        // Navigation options
+
+        Spacer(modifier = Modifier.height(16.dp))
+
         Text(text = "Already have an account? Sign up", modifier = Modifier.clickable {
             navigateToLogin()
         })
+
         when (signInUiState){
             is SignInUiState.Loading -> LoadingScreen()
             is SignInUiState.Success -> navigateToVerify()
@@ -139,10 +185,10 @@ fun RegisterScreen(
                 ErrorScreen(signInUiState.errorMessage)
             }
         }
+
     }
 }
 
-// Composable function to display an AlertDialog with the specified title, message, answer, and onDismiss action.
 @Composable
 fun ShowDialog(title: String, message: String, answer: String, onDismiss: () -> Unit) {
     AlertDialog(

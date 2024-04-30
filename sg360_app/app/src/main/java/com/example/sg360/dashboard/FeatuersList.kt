@@ -103,7 +103,6 @@ class staticFeatures(context: Context) {
             totalTransmittedBytes = TrafficStats.getTotalTxBytes().toDouble(),
             totalTransmittedPackets = TrafficStats.getTotalTxPackets().toDouble()
         )
-        println(statsData)
         return statsData
     }
 

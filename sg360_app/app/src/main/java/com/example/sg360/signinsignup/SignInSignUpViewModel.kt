@@ -61,8 +61,8 @@ class SignInSignUpViewModel(
 
                 SignInUiState.Loading.also {
                     signInUiState = SignInUiState.Success(response.toString())
-                    userRepository.saveAccessToken(response.accessToken)
-                    userRepository.saveRefreshToken(response.refreshToken)
+                    userRepository.saveAccessToken(response.access)
+                    userRepository.saveRefreshToken(response.refresh)
 
                     navigateToDashBoard()
                 }

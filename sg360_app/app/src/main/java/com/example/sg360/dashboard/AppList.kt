@@ -30,8 +30,6 @@ import androidx.compose.ui.unit.dp
 fun AppList(apklist: List<String>, onItemSelected: (String) -> Unit) {
     var isExpanded by remember { mutableStateOf(false) }
     var selectedIndex by remember { mutableStateOf("Select Application") }
-    println("apklist")
-    println(apklist)
 
     Column (
         modifier = Modifier

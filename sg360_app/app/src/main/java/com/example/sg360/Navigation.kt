@@ -101,7 +101,6 @@ fun Sg360NavHost(
         }
 
         composable(Routes.dashboard) {
-            println("Dashboard")
             val dashBoardViewModel: DashBoardViewModel = viewModel(
                 factory = DashBoardViewModel.Factory
             )
