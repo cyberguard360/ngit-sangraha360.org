@@ -208,7 +208,7 @@ fun LoginScreen(
 // @param modifier The modifier to apply to the loading screen.
 @Composable
 fun LoadingScreen(modifier: Modifier = Modifier) {
-    Text("Loading",modifier = modifier)
+//    Text("Loading",modifier = modifier)
 }
 
 // Function to display an error screen with the provided error message and optional modifier.

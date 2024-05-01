@@ -64,7 +64,7 @@ fun Sg360NavHost(
                 factory = SignInSignUpViewModel.Factory
             )
             RegisterScreen(
-                navigateToLogin = { navController.navigate(Routes.dashboard) },
+                navigateToLogin = { navController.navigate(Routes.login) },
                 navigateToVerify = { navController.navigate(Routes.dashboard) },
                 signInUiState = signInViewModel.signInUiState
             ) {

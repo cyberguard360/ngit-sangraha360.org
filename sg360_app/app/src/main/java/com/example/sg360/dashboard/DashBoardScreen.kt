@@ -1,9 +1,13 @@
 package com.example.sg360.dashboard
 
+import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Button
 import androidx.compose.material3.CircularProgressIndicator
@@ -44,19 +48,23 @@ fun DashBoard(
 ) {
     var selectedApp: String by remember { mutableStateOf("Select Application") }
 
-    Column {
+    Column (
+        modifier = Modifier
+            .fillMaxSize()
+            .padding(top = 64.dp),  // Fill the parent size
+        horizontalAlignment = Alignment.CenterHorizontally
+    ){
         AppList(apkNames) { selectedAppName ->
             selectedApp = selectedAppName
         }
+        Spacer(modifier = Modifier.height(16.dp))
         Button(
             onClick = {
                 if (selectedApp != "Select Application") {
                     sendData(selectedApp)
                 } else {
                     // Handle case when nothing is selected
-                    // For example, show a toast or display an error message
                 }
-
             },
             modifier = Modifier.padding(top = 16.dp)
         ) {

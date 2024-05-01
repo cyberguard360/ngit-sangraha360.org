@@ -1,7 +1,9 @@
 package com.example.sg360.dashboard
 
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.DropdownMenuItem
 import androidx.compose.material3.ExperimentalMaterial3Api
@@ -61,6 +63,8 @@ fun AppList(apklist: List<String>, onItemSelected: (String) -> Unit) {
                 }
             }
         }
+
+        Spacer(modifier = Modifier.height(16.dp))
 
         Text(text = "Currently Selected: $selectedIndex")
     }
