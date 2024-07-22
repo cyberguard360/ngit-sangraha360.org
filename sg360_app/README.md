@@ -34,7 +34,7 @@ On Android versions prior to Android 6.0, wallabag requires the following permis
 
 ### Installation
 
-1. Download the latest APK file from the [releases section](https://github.com/cyberguard360/ngit-sangraha360.org/releases) of this repository.
+1. Download the latest APK file from the [releases section](#) of this repository.
 2. Enable installation from unknown sources in your device settings.
 3. Open the downloaded APK file and follow the on-screen instructions to install the application.
 

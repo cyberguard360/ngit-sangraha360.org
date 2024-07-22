@@ -34,13 +34,11 @@ import com.example.sg360.R
 /**
  * A Composable function that displays a verification screen.
  *
- * @param navigateToDashBoard A function that navigates to the dashboard.
  * @param signInUiState The current state of the sign-in process.
  * @param signInCall A function that signs in the user.
  */
 @Composable
 fun VerificationScreen(
-    navigateToDashBoard: () -> Unit,
     signInUiState: SignInUiState,
     signInCall: ( otpText: String) -> Unit
 ) {

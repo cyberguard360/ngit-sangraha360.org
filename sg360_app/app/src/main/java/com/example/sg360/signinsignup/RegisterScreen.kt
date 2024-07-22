@@ -29,6 +29,16 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.sg360.R
 
+/**
+ * RegisterScreen is a Composable function that displays a screen for registering a new account.
+ *
+ * @param navigateToLogin A lambda function that navigates to the login screen when called.
+ * @param navigateToVerify A lambda function that navigates to the verification screen when called.
+ * @param signInUiState The current state of the sign-in process.
+ * @param signInCall A lambda function that performs the sign-in process.
+ *
+ * @return Unit.
+ */
 @Composable
 fun RegisterScreen(
     navigateToLogin: () -> Unit,

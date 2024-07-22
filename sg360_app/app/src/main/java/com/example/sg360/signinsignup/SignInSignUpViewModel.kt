@@ -9,8 +9,7 @@ import androidx.lifecycle.viewModelScope
 import androidx.lifecycle.viewmodel.initializer
 import androidx.lifecycle.viewmodel.viewModelFactory
 import com.example.sg360.SG360Application
-import com.example.sg360.dashboard.DashBoardViewModel
-import com.example.sg360.data.UserRepository
+import com.example.sg360.utils.UserRepository
 import com.example.sg360.models.*
 import com.example.sg360.network.SgApi
 import kotlinx.coroutines.launch
@@ -23,7 +22,7 @@ import retrofit2.HttpException
 sealed interface SignInUiState {
     data class Success(val photos: String) : SignInUiState
     data class Error(val errorMessage: String) : SignInUiState
-    object Loading : SignInUiState
+    data object Loading : SignInUiState
 }
 
 /**
@@ -45,7 +44,6 @@ class SignInSignUpViewModel(
 
     var signInUiState: SignInUiState by mutableStateOf(SignInUiState.Loading)
 
-
     /**
      * Handles the sign in process.
      *
@@ -56,13 +54,13 @@ class SignInSignUpViewModel(
     fun getSignIn(email: String, password: String, navigateToDashBoard: () -> Unit) {
         viewModelScope.launch {
             signInUiState = try {
-                val loginData = loginbod(email, password)
+                val loginData = LoginBod(email, password)
                 val response = SgApi.retrofitService.login(loginData)
 
                 SignInUiState.Loading.also {
                     signInUiState = SignInUiState.Success(response.toString())
-                    userRepository.saveAccessToken(response.access)
-                    userRepository.saveRefreshToken(response.refresh)
+                    userRepository.saveAccessToken(response.accessToken)
+                    userRepository.saveRefreshToken(response.refreshToken)
 
                     navigateToDashBoard()
                 }
@@ -79,7 +77,6 @@ class SignInSignUpViewModel(
             }
         }
     }
-
 
     /**
      * Handles the sign up process.
@@ -128,11 +125,10 @@ class SignInSignUpViewModel(
      *
      * @param email The email of the user.
      * @param otp The OTP to be verified.
-     * @param username The username of the user.
      * @param navigateToLogin The lambda function to navigate to the login screen after successful verification.
      * @return void
      */
-    fun verifyOTP(email: String, otp: String, username: String, navigateToLogin: () -> Unit) {
+    fun verifyOTP(email: String, otp: String, navigateToLogin: () -> Unit) {
         viewModelScope.launch {
             signInUiState = try {
                 val verifyData = VerifyBod(email, otp)
