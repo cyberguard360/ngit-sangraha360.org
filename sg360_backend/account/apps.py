@@ -11,4 +11,7 @@ class AccountConfig(AppConfig):
     # Specify the name of the application
     name = 'account'
 
+    def ready(self):
+        import account.signals
+
 
