@@ -1,16 +1,22 @@
 package com.example.sg360.network
 
 import com.example.sg360.models.*
+import okhttp3.ResponseBody
+import retrofit2.Call
 import retrofit2.http.Body
+import retrofit2.http.GET
 import retrofit2.http.Header
+import retrofit2.http.Headers
 import retrofit2.http.POST
+import java.sql.Date
+
 
 interface SgApiService {
         /**
          * Sends login request and returns login response
          */
         @POST("api/user/login/")
-        suspend fun login( @Body loginRequest: loginbod): loginres
+        suspend fun login( @Body loginRequest: LoginBod): LoginRes
 
         /**
          * Sends registration request and returns registration response
@@ -25,15 +31,6 @@ interface SgApiService {
         suspend fun verify( @Body verifyRequest: VerifyBod) : RegisterRes
 
         /**
-         * Sends project data and returns prediction response
-         */
-        @POST("api/user/project-data/")
-        suspend fun sendData(
-                @Body dataRequest: StatsData,
-                @Header("Authorization") headerBody: String
-        ) : PredictResponse
-
-        /**
          * Sends request to check profile and returns nothing
          */
         @POST("api/user/profile/")
@@ -41,4 +38,16 @@ interface SgApiService {
                 @Body checkBody: String,
                 @Header("Authorization") headBody: String
         )
+
+        @POST("api/user/app-data/")
+        suspend fun sendAppData(
+                @Body appData: AllAppsData
+        ): ScanRes
+
+        @POST("/federated/clientData/")
+        suspend fun sendClientData(@Body clusterRequest: ClusterRequest): ClusterResponse
+
+        @Headers("Content-Type: application/json")
+        @POST("/federated/downloadModel/")
+        fun downloadModel(@Body requestBody: Map<String, String>): Call<ResponseBody>
 }

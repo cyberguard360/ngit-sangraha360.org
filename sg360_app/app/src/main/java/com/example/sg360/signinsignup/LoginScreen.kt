@@ -158,7 +158,7 @@ fun LoginScreen(
         Spacer(modifier = Modifier.height(32.dp))  // Add some spacing
 
         Text(text = "Forgot Password?", modifier = Modifier.clickable {
-            Unit//
+//            Unit//
         })  // Display the forgot password text
 
         Spacer(modifier = Modifier.height(32.dp))  // Add some spacing
@@ -208,7 +208,7 @@ fun LoginScreen(
 // @param modifier The modifier to apply to the loading screen.
 @Composable
 fun LoadingScreen(modifier: Modifier = Modifier) {
-    Text("Loading",modifier = modifier)
+    Text("",modifier = modifier)
 }
 
 // Function to display an error screen with the provided error message and optional modifier.

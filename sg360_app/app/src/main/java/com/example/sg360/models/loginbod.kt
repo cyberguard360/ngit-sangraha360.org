@@ -6,7 +6,7 @@ package com.example.sg360.models
  * @property email The email of the user.
  * @property password The password of the user.
  */
-data class loginbod(
+data class LoginBod(
     // The email of the user.
     val email: String,
     // The password of the user.
