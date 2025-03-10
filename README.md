@@ -25,9 +25,9 @@ Unlike traditional security apps that require significant permissions and send d
 ## 📱 Screenshots
 
 <p align="center">
-  <img src="images/DashBoard.png" width=200 alt="Dashboard Screen" />
-  <img src="images/ScanScreen.png" width=200 alt="Scan Screen" />
-  <img src="images/AnalysisResult.png" width=200 alt="Analysis Results" />
+  <img src="sg360_app/images/DashBoard.png" width=200 alt="Dashboard Screen" />
+  <img src="sg360_app/images/ScanScreen.png" width=200 alt="Scan Screen" />
+  <img src="sg360_app/images/AnalysisResult.png" width=200 alt="Analysis Results" />
 </p>
 
 ## 🚀 Getting Started
