@@ -1,241 +1,298 @@
 package com.example.sg360.dashboard
 
+import android.app.Application
 import android.content.Context
 import android.content.pm.PackageManager
 import android.util.Log
-import androidx.lifecycle.ViewModel
-import androidx.lifecycle.ViewModelProvider
+import androidx.compose.ui.graphics.asImageBitmap
+import androidx.core.graphics.drawable.toBitmap
+import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.viewModelScope
-import androidx.lifecycle.viewmodel.initializer
-import androidx.lifecycle.viewmodel.viewModelFactory
-import com.example.sg360.AppScanner
-import com.example.sg360.MainActivity
-import com.example.sg360.SG360Application
-import com.example.sg360.TFLiteClassifier
-import com.example.sg360.models.AllAppsData
-import com.example.sg360.models.App
-import com.example.sg360.models.AppDetail
-import com.example.sg360.models.AppInfo
+import com.example.sg360.data.AppAnalysisData
+import com.example.sg360.data.AppAnalysisDataStore
+import com.example.sg360.models.AnalysisResult
+import com.example.sg360.models.AnalysisStatusResponse
 import com.example.sg360.models.AppItemState
-import com.example.sg360.models.ClusterRequest
-import com.example.sg360.models.RegisterRes
-import com.example.sg360.network.SgApi
-import com.example.sg360.utils.UserRepository
-import com.example.sg360.utils.jsonSerializableToTensor
+import com.example.sg360.models.StaticAnalysisResult
+import dagger.hilt.android.lifecycle.HiltViewModel
+import kotlinx.coroutines.CoroutineExceptionHandler
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
+import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.firstOrNull
+import kotlinx.coroutines.flow.flow
+import kotlinx.coroutines.flow.flowOn
 import kotlinx.coroutines.launch
-import javax.crypto.Cipher
-import javax.crypto.spec.SecretKeySpec
+import java.util.Random
+import javax.inject.Inject
 
-/**
- * Represents the UI state of the Dashboard screen.
- *
- * Sealed interface with three possible states:
- * - [Success]: Dashboard is loaded and successfully displayed with the list of photos.
- * - [Error]: Error occurred while loading the dashboard.
- * - [Loading]: Dashboard is currently loading.
- */
-sealed interface DashBoardUiState {
+
+@HiltViewModel
+class DashBoardViewModel @Inject constructor(
+    private val repository: DashBoardRepository, // Repository for app analysis operations
+    private val analysisDataStore: AppAnalysisDataStore, // DataStore for caching analysis results
+    application: Application // Application context for accessing system resources
+) : AndroidViewModel(application) {
+
+    private val context: Context = application.applicationContext // Application context
+    private val TAG = "DashBoardViewModel" // Log tag for debugging
+
+    // Mutable state flow to manage the UI state of the dashboard
+    private val _uiState = MutableStateFlow<DashboardUiState>(DashboardUiState.Idle)
+
+    // Public state flow exposing the current UI state to the UI layer
+    val uiState: StateFlow<DashboardUiState> = _uiState.asStateFlow()
+
+    // Mutable state flow to manage the list of installed apps
+    private val _installedApps = MutableStateFlow<List<AppItemState>>(emptyList())
+
+    // Public state flow exposing the list of installed apps to the UI layer
+    val installedApps: StateFlow<List<AppItemState>> = _installedApps.asStateFlow()
+
     /**
-     * Success state of the Dashboard UI.
+     * Initializes the ViewModel by loading the list of installed apps.
      *
-     * @property photos The list of photos to display.
+     * This method uses a coroutine to load installed apps asynchronously and updates the
+     * `_installedApps` state flow with the results.
      */
-    data class Success(val photos: RegisterRes) : DashBoardUiState
-    /**
-     * Error state of the Dashboard UI.
-     *
-     * @property errorMessage The error message to display.
-     */
-    data class Error(val errorMessage: String) : DashBoardUiState
-    /**
-     * Loading state of the Dashboard UI.
-     *
-     * Indicates that the Dashboard is currently loading.
-     */
-    data object Loading : DashBoardUiState
-}
-
-/**
- * ViewModel for the Dashboard screen.
- *
- * @param userRepository Repository for user-related data operations.
- */
-class DashBoardViewModel(
-    private val userRepository: UserRepository
-) : ViewModel() {
-    // Mutable state flow to hold the list of app item states
-    private val _appItemStates = MutableStateFlow<List<AppItemState>>(emptyList())
-    val appItemStates: StateFlow<List<AppItemState>> = _appItemStates
-
-
-    fun scanAllApps() {
+    init {
         viewModelScope.launch {
-            val pendingApps = _appItemStates.value
-                .map { appItemState ->
-                    App (
-                        name = appItemState.appName,
-                        packageName = appItemState.packageName,
-                        source = "kuch bhi"
-                    )
-                }
-            if (pendingApps.isNotEmpty()) {
-                val requestData =  ClusterRequest(clusterName = "z_-3", apps= pendingApps)
-                try {
-                    val responseData = SgApi.retrofitService.sendClientData(requestData)
-                    Log.d("DashBoardViewModel", "Cluster: ${responseData.Cluster}")
-                    userRepository.saveClusterName(responseData.Cluster)
-                    userRepository.saveEpochCount(responseData.Epoch)
-                    userRepository.saveRoundCount(responseData.Round)
-                    userRepository.saveModelData(responseData.modelData)
-                    Log.d("DashBoardViewModel", "Model Data: ${responseData.modelData}")
-                    newfunction()
-                } catch (e: Exception) {
-                    Log.e("DashBoardViewModel", "Error sending app data", e)
-                }
+            loadInstalledApps(context).collect { apps ->
+                _installedApps.value = apps
             }
         }
     }
 
-    fun newfunction() {
+    /**
+     * Resets the UI state to the idle state.
+     *
+     * This method is used to clear the current analysis state and return the dashboard to its
+     * initial idle state.
+     */
+    fun resetState() {
+        _uiState.value = DashboardUiState.Idle
+    }
+
+    /**
+     * Scans and analyzes an app by performing static and dynamic analysis.
+     *
+     * This method orchestrates the entire analysis process for a given app:
+     * 1. Checks for locally stored analysis results to avoid redundant computations.
+     * 2. Performs static analysis if no valid local data exists.
+     * 3. Checks the server for existing dynamic analysis results.
+     * 4. Uploads APK files and performs dynamic analysis if necessary.
+     *
+     * @param appItemState The [AppItemState] object representing the app to analyze.
+     */
+    fun scanAndAnalyzeApp(appItemState: AppItemState) {
+        // Update UI to indicate the start of the analysis process
+        _uiState.value = DashboardUiState.StaticAnalysisInProgress("Preparing scan...")
+
         viewModelScope.launch {
-            val modelData = userRepository.modelData.firstOrNull() ?: ""
-            val secretKey = userRepository.secretKey.firstOrNull() ?: ""
-            if (modelData != null) {
-                jsonSerializableToTensor(modelData, secretKey)
+            // Step 1: Check for locally stored analysis
+            val localAnalysisData = analysisDataStore.getAnalysisResult(appItemState.packageName).firstOrNull()
+            val isLocalDataValid = localAnalysisData?.let {
+                analysisDataStore.hasValidAnalysisResult(it)
+            } ?: false
+
+            // If we have complete valid analysis, show final results
+            if (localAnalysisData != null && isLocalDataValid && localAnalysisData.dynamicAnalysisResult != null) {
+                Log.d(TAG, "Using complete locally stored analysis for ${appItemState.packageName}")
+                _uiState.value = DashboardUiState.DynamicResult(
+                    staticAnalysisResult = localAnalysisData.staticAnalysisResult,
+                    dynamicAnalysisResult = localAnalysisData.dynamicAnalysisResult,
+                    timestamp = localAnalysisData.timestamp ?: System.currentTimeMillis()
+                )
+                return@launch
+            }
+
+            // Step 2: Perform Static Analysis if needed
+            _uiState.value = DashboardUiState.StaticAnalysisInProgress("Analyzing app code...")
+            val staticAnalysisResult: StaticAnalysisResult = if (localAnalysisData?.staticAnalysisResult != null) {
+                Log.d(TAG, "Using stored static analysis for ${appItemState.packageName}")
+                localAnalysisData.staticAnalysisResult
+            } else {
+                Log.d(TAG, "Performing static analysis for ${appItemState.packageName}")
+                val result = repository.performStaticAnalysis(appItemState.packageName)
+
+                // Save static analysis immediately
+                val analysisData = AppAnalysisData(
+                    packageName = appItemState.packageName,
+                    staticAnalysisResult = result,
+                    dynamicAnalysisResult = null,
+                    timestamp = System.currentTimeMillis()
+                )
+                analysisDataStore.saveAnalysisResult(analysisData)
+                Log.d(TAG, "Saved static analysis for ${appItemState.packageName}")
+
+                result
+            }
+
+            // Update UI with static analysis results
+            _uiState.value = DashboardUiState.StaticResult(
+                result = staticAnalysisResult,
+                timestamp = System.currentTimeMillis()
+            )
+
+            // Step 3: Check if Dynamic Analysis exists on server
+            val analysisStatus = repository.checkAnalysisStatus(appItemState.packageName)
+
+            if (analysisStatus.alreadyAnalyzed && analysisStatus.previousResults != null) {
+                Log.d(TAG, "Using server analysis for ${appItemState.packageName}")
+
+                // Store final result locally
+                val finalAnalysisData = AppAnalysisData(
+                    packageName = appItemState.packageName,
+                    staticAnalysisResult = staticAnalysisResult,
+                    dynamicAnalysisResult = analysisStatus.previousResults,
+                    timestamp = System.currentTimeMillis()
+                )
+                analysisDataStore.saveAnalysisResult(finalAnalysisData)
+
+                _uiState.value = DashboardUiState.DynamicResult(
+                    staticAnalysisResult = staticAnalysisResult,
+                    dynamicAnalysisResult = analysisStatus.previousResults,
+                    timestamp = System.currentTimeMillis()
+                )
+                return@launch
+            }
+
+            // If we get here, we need to perform dynamic analysis
+            _uiState.value = DashboardUiState.DynamicAnalysisInProgress(
+                stage = "Collecting APK files...",
+                staticAnalysisResult = staticAnalysisResult
+            )
+
+            val apkFiles = repository.getApkFilesForPackage(appItemState)
+
+            if (apkFiles.isEmpty()) {
+                _uiState.value = DashboardUiState.StaticResult(
+                    result = staticAnalysisResult,
+                    timestamp = System.currentTimeMillis(),
+                    dynamicError = "No APK files found for ${appItemState.packageName}"
+                )
+                return@launch
+            }
+
+            try {
+                repository.uploadApkFiles(
+                    appItemState.name,
+                    appItemState.packageName,
+                    apkFiles,
+                    staticAnalysisResult // Reusing static analysis result instead of recalculating
+                ).collect { progress ->
+                    when (progress) {
+                        is UploadProgress.Started -> {
+                            _uiState.value = DashboardUiState.DynamicAnalysisInProgress(
+                                stage = "Starting upload...",
+                                staticAnalysisResult = staticAnalysisResult
+                            )
+                        }
+
+                        is UploadProgress.Uploading -> {
+                            _uiState.value = DashboardUiState.DynamicAnalysisInProgress(
+                                stage = "Uploading: ${progress.percentComplete}%",
+                                staticAnalysisResult = staticAnalysisResult
+                            )
+                        }
+
+                        is UploadProgress.PreparingDynamicAnalysis -> {
+                            _uiState.value = DashboardUiState.DynamicAnalysisInProgress(
+                                stage = "Preparing for dynamic analysis...",
+                                staticAnalysisResult = staticAnalysisResult
+                            )
+                        }
+
+                        is UploadProgress.Completed -> {
+                            val finalAnalysisData = AppAnalysisData(
+                                packageName = appItemState.packageName,
+                                staticAnalysisResult = staticAnalysisResult,
+                                dynamicAnalysisResult = progress.result.previousResults,
+                                timestamp = System.currentTimeMillis()
+                            )
+                            analysisDataStore.saveAnalysisResult(finalAnalysisData)
+                            Log.d(TAG, "Saved final analysis for ${appItemState.packageName}")
+
+                            _uiState.value = DashboardUiState.DynamicResult(
+                                staticAnalysisResult = staticAnalysisResult,
+                                dynamicAnalysisResult = progress.result.previousResults!!,
+                                timestamp = System.currentTimeMillis()
+                            )
+                        }
+
+                        is UploadProgress.Error -> {
+                            if (_uiState.value is DashboardUiState.DynamicAnalysisInProgress) {
+                                val currentState = _uiState.value as DashboardUiState.DynamicAnalysisInProgress
+                                _uiState.value = DashboardUiState.StaticResult(
+                                    result = currentState.staticAnalysisResult,
+                                    timestamp = System.currentTimeMillis(),
+                                    dynamicError = progress.message
+                                )
+                            }
+                        }
+                    }
+                }
+            } catch (e: Exception) {
+                Log.e(TAG, "Analysis failed: ${e.message}")
             }
         }
     }
 
-//    /**
-//     * Initiates a scan for all apps.
-//     */
-//    fun scanAllApps() {
-//        viewModelScope.launch {
-//            val pendingApps = _appItemStates.value
-//                .filter { !it.isDone } // Exclude apps that are already done
-//                .map { appItemState ->
-//                    AppInfo(
-//                        name = appItemState.appName,
-//                        packageName = appItemState.packageName,
-//                        source = "-" // Assuming the source URL is the same for all
-//                    )
-//                }
-//
-//            if (pendingApps.isNotEmpty()) {
-//                val appData = AllAppsData(apps = pendingApps)
-//                try {
-//                    // Replace with actual API call to send app data and get response
-//                    val response = SgApi.retrofitService.sendAppData(appData)
-//                    val responseMsgs = response.msg // Ensure it's not null
-//
-//                    _appItemStates.value = _appItemStates.value.map { appItemState ->
-//                        val matchingMsg =
-//                            responseMsgs.firstOrNull { it.packageName == appItemState.packageName }
-//                        if (matchingMsg != null) {
-//                            when (matchingMsg.prediction) {
-//                                "Benign" -> {
-//                                    saveAppList(appItemState.packageName, "Success")
-//                                    appItemState.copy(result = matchingMsg.prediction, isDone = true)
-//                                }
-//                                "Malware" -> {
-//                                    saveAppList(appItemState.packageName, "Failure")
-//                                    appItemState.copy(result = matchingMsg.prediction)
-//                                }
-//                                "Ambiguous" -> {
-//                                    saveAppList(appItemState.packageName, "Unknown")
-//                                    appItemState.copy(result = "Unknown")
-//                                }
-//                                else -> {
-//                                    appItemState.copy(result = "Unknown")
-//                                }
-//                            }
-//                        } else {
-//                            appItemState.copy(result = "Unknown")
-//                        }
-//                    }
-//                } catch (e: Exception) {
-//                    Log.e("DashBoardViewModel", "Error sending app data", e)
-//                }
-//            } else {
-//                Log.d("DashBoardViewModel", "No apps to scan")
-//            }
-//        }
-//    }
+    /**
+     * Clears all cached analysis results from the DataStore.
+     *
+     * This method removes all stored analysis data, ensuring that subsequent analyses start fresh.
+     */
+    fun clearAllCachedResults() {
+        viewModelScope.launch {
+            analysisDataStore.clearAllAnalysisResults()
+        }
+    }
 
     /**
-     * Creates the list of app item states from the provided list of app details.
+     * Clears the cached analysis result for a specific package.
      *
-     * @param appDetail List of app details to create app item states from.
+     * This method removes the analysis data associated with the given package name from the DataStore.
+     *
+     * @param packageName The package name of the app to clear cached results for.
      */
-    fun createAppList(appDetail: List<AppDetail>) {
+    fun clearCachedResult(packageName: String) {
         viewModelScope.launch {
-            val appList = userRepository.appList.firstOrNull() ?: emptyList()
-            _appItemStates.value = appDetail.map { appInfo ->
-                val appEntry = appList.firstOrNull { it.endsWith(appInfo.packageName) }
-                val resultValue = when {
-                    appEntry?.startsWith(".malware.") == true -> "Malware"
-                    appEntry?.startsWith(".benign.") == true -> "Benign"
-                    appEntry?.startsWith(".unknown.") == true -> "Unknown"
-                    else -> null
-                }
+            analysisDataStore.removeAnalysisResult(packageName)
+        }
+    }
+
+    /**
+     * Loads the list of installed apps on the device.
+     *
+     * This method queries the system's package manager to retrieve all installed applications,
+     * filters out non-launchable apps and the current app, and maps the results into a list of
+     * [AppItemState] objects. The list is sorted alphabetically by app name length.
+     *
+     * @param context The application context used to access the package manager.
+     * @return A [Flow] emitting the list of installed apps as [AppItemState] objects.
+     */
+    private fun loadInstalledApps(context: Context): Flow<List<AppItemState>> = flow {
+        val packageManager = context.packageManager
+        val installedApps = packageManager.getInstalledApplications(PackageManager.GET_META_DATA)
+            .filter {
+                // Filter out apps without launch intents and the current app
+                packageManager.getLaunchIntentForPackage(it.packageName) != null &&
+                        it.packageName != context.packageName
+            }
+            .map { appInfo ->
+                // Map each app info to an AppItemState object
                 AppItemState(
-                    appName = appInfo.appName,
+                    name = appInfo.loadLabel(packageManager).toString(),
                     packageName = appInfo.packageName,
-                    icon = appInfo.icon,
-                    isLoading = false,
-                    result = resultValue,
-                    isDone = (appEntry != null) && (resultValue == "Benign")
+                    icon = appInfo.loadIcon(packageManager).toBitmap().asImageBitmap(),
+                    sourceDir = appInfo.sourceDir,
+                    splitSourceDirs = appInfo.splitSourceDirs
                 )
             }
-        }
-    }
-
-    /**
-     * Saves the app list with a specific label based on the app name.
-     *
-     * @param appName Name of the app to save the list for.
-     * @param label Label to assign to the app list ("Success", "Unknown", "Failure").
-     */
-    private fun saveAppList(appName: String, label: String) {
-        viewModelScope.launch {
-            try {
-                when (label) {
-                    "Success" -> {
-                        userRepository.deleteAppFromList(".malware.$appName")
-                        userRepository.deleteAppFromList(".unknown.$appName")
-                        userRepository.saveAppList(".benign.$appName")
-                    }
-                    "Unknown" -> {
-                        userRepository.deleteAppFromList(".benign.$appName")
-                        userRepository.deleteAppFromList(".malware.$appName")
-                        userRepository.saveAppList(".unknown.$appName")
-                    }
-                    else -> {
-                        userRepository.deleteAppFromList(".benign.$appName")
-                        userRepository.deleteAppFromList(".unknown.$appName")
-                        userRepository.saveAppList(".malware.$appName")
-                    }
-                }
-                Log.d("DashBoardViewModel", userRepository.appList.firstOrNull().toString())
-            } catch (e: Exception) {
-                Log.e("DashBoardViewModel", "Error saving app list for $appName", e)
-            }
-        }
-    }
-
-    /**
-     * Factory for creating DashBoardViewModel instances.
-     */
-    companion object {
-        val Factory: ViewModelProvider.Factory = viewModelFactory {
-            initializer {
-                val application =
-                    (this[ViewModelProvider.AndroidViewModelFactory.APPLICATION_KEY] as SG360Application)
-                DashBoardViewModel(application.userRepository)
-            }
-        }
-    }
+            .sortedBy { it.name.length } // Sort apps by name length
+        emit(installedApps) // Emit the final list of installed apps
+    }.flowOn(Dispatchers.IO) // Perform the operation on the IO dispatcher for efficiency
 }

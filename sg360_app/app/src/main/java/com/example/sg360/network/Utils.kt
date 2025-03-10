@@ -1,4 +1,4 @@
-package com.example.sg360.utils
+package com.example.sg360.network
 
 
 object Utils {
