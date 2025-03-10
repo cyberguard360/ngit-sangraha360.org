@@ -1,3 +1,31 @@
 <resources>
     <string name="app_name">SG360</string>
+    <string name="login_image_description">Login Image</string>
+    <string name="welcome_back">Welcome Back!</string>
+    <string name="login_to_account">Login to your account</string>
+    <string name="email_address">Email Address</string>
+    <string name="required">Required</string>
+    <string name="password">Password</string>
+    <string name="email_invalid">Invalid email format</string>
+    <string name="enter_valid_email">Please enter a valid email</string>
+    <string name="password_invalid">Invalid password</string>
+    <string name="password_length_error">Password must be at least 6 characters</string>
+    <string name="login">Login</string>
+    <string name="forgot_password">Forgot Password?</string>
+    <string name="dont_have_account">Don\'t have an account?</string>
+    <string name="gmail">Continue with Google</string>
+    <string name="okay">Okay</string>
+    <string name="register_image_description">Registration Image</string>
+    <string name="register_here">Register Here</string>
+    <string name="register_your_account">Register your account</string>
+    <string name="confirm_password">Confirm Password</string>
+    <string name="already_have_account">Already have an account?</string>
+    <string name="verification_image">Verification Image</string>
+    <string name="verification">Verification</string>
+    <string name="verify_your_account">Verify your account</string>
+    <string name="verify">Verify</string>
+    <string name="resend_otp">Resend OTP</string>
+    <string name="username">Username</string>
+    <string name="register">Register</string>
+    <string name="passwords_must_match">Passwords do not match</string>
 </resources>

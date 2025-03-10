@@ -1,116 +1,68 @@
 package com.example.sg360
 
+import VerificationScreen
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
-import androidx.compose.runtime.mutableStateOf
-import androidx.compose.runtime.remember
-import androidx.compose.runtime.setValue
-import androidx.lifecycle.viewmodel.compose.viewModel
+import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
+import com.example.sg360.auth.AuthViewModel
 import com.example.sg360.dashboard.DashBoard
 import com.example.sg360.dashboard.DashBoardViewModel
-import com.example.sg360.network.Routes
-import com.example.sg360.signinsignup.LoginScreen
-import com.example.sg360.signinsignup.RegisterScreen
-import com.example.sg360.signinsignup.SignInSignUpViewModel
-import com.example.sg360.signinsignup.SignInUiState
-import com.example.sg360.signinsignup.VerificationScreen
+import com.example.sg360.auth.LoginScreen
+import com.example.sg360.auth.RegisterScreen
 
+/**
+ * Navigation host for the SG360 application.
+ *
+ * This composable function defines the navigation graph for the app using Jetpack Compose's
+ * Navigation component. It sets up routes for different screens and injects view models
+ * using Hilt for dependency injection.
+ *
+ * @param navController The [NavHostController] used to manage navigation within the app.
+ *                      Defaults to a new instance created via [rememberNavController].
+ */
 @Composable
 fun Sg360NavHost(
-    activity: MainActivity,
     navController: NavHostController = rememberNavController(),
 ) {
-    // State for email and username
-    var emailState by remember { mutableStateOf("") }
-    var userName by remember { mutableStateOf("") }
-
     NavHost(
         navController = navController,
-        startDestination = Routes.dashboard,
+        startDestination = Routes.login, // Start the app on the login screen
     ) {
         // Login Screen
         composable(Routes.login) {
-            val signInViewModel: SignInSignUpViewModel = viewModel(
-                factory = SignInSignUpViewModel.Factory
-            )
-            LoginScreen(
-                navigateToRegister = { navController.navigate(Routes.register) },
-                navigateToDashBoard = { navController.navigate(Routes.dashboard) },
-                signInUiState = signInViewModel.signInUiState
-            ) { email, password ->
-                signInViewModel.getSignIn(
-                    email,
-                    password,
-                    navigateToDashBoard = { navController.navigate(Routes.dashboard) }
-                )
-            }
+            val authViewModel: AuthViewModel = hiltViewModel() // Inject AuthViewModel using Hilt
+            LoginScreen(navController, authViewModel)
         }
 
         // Register Screen
         composable(Routes.register) {
-            val signInViewModel: SignInSignUpViewModel = viewModel(
-                factory = SignInSignUpViewModel.Factory
-            )
-            RegisterScreen(
-                navigateToLogin = { navController.navigate(Routes.dashboard) },
-                navigateToVerify = { navController.navigate(Routes.dashboard) },
-                signInUiState = signInViewModel.signInUiState
-            ) { email, username, password, confirmpass, tc ->
-                signInViewModel.getSignUp(
-                    email,
-                    username,
-                    password,
-                    confirmpass,
-                    tc,
-                    navigateToVerify = { navController.navigate(Routes.verifyscreen) }
-                )
-                emailState = email
-                userName = username
-            }
+            val authViewModel: AuthViewModel = hiltViewModel() // Inject AuthViewModel using Hilt
+            RegisterScreen(navController, authViewModel)
         }
 
         // Verification Screen
         composable(Routes.verifyscreen) {
-            val signInViewModel: SignInSignUpViewModel = viewModel(
-                factory = SignInSignUpViewModel.Factory
-            )
-            signInViewModel.signInUiState = SignInUiState.Loading
-            VerificationScreen(
-                signInUiState = signInViewModel.signInUiState,
-            ) { otp ->
-                signInViewModel.verifyOTP(
-                    emailState,
-                    otp,
-                    navigateToLogin = { navController.navigate(Routes.login) }
-                )
-            }
+            VerificationScreen(navController)
         }
 
         // Dashboard Screen
         composable(Routes.dashboard) {
-            val dashBoardViewModel: DashBoardViewModel = viewModel(
-                factory = DashBoardViewModel.Factory
-            )
-            LaunchedEffect(Unit) {
-                dashBoardViewModel.createAppList(activity.retrieveInstalledApps())
-            }
-            val appItemStates by dashBoardViewModel.appItemStates.collectAsState()
-            val appScanner: AppScanner = AppScanner(activity)
+            val dashBoardViewModel: DashBoardViewModel = hiltViewModel() // Inject DashBoardViewModel using Hilt
+            val appItemStates by dashBoardViewModel.installedApps.collectAsState() // Observe installed apps state
+
             DashBoard(
-                appItemStates = appItemStates,
-                scanAllApps = { dashBoardViewModel.scanAllApps() },
-                refresh = {
-                    navController.navigate(Routes.dashboard) {}
-                },
-                scanApp = { packageName -> appScanner.scanApp(packageName) }
+                appItemStates = appItemStates, // Pass the list of installed apps to the dashboard
+                viewModel = dashBoardViewModel, // Pass the view model for additional functionality
+                scanApp = { appItemState ->
+                    // Trigger app scanning and analysis when requested
+                    dashBoardViewModel.scanAndAnalyzeApp(appItemState)
+                }
             )
         }
     }
-
 }

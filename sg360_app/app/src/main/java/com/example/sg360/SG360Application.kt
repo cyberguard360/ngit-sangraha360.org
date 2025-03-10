@@ -1,73 +1,82 @@
 package com.example.sg360
 
 import android.app.Application
-import android.content.Context
 import android.util.Log
-import androidx.datastore.core.DataStore
-import androidx.datastore.preferences.core.Preferences
-import androidx.datastore.preferences.preferencesDataStore
 import androidx.work.Constraints
 import androidx.work.ExistingPeriodicWorkPolicy.KEEP
 import androidx.work.NetworkType
 import androidx.work.PeriodicWorkRequestBuilder
 import androidx.work.WorkManager
-import com.example.sg360.utils.UserRepository
 import com.example.sg360.worker.InstalledAppsWorker
+import dagger.hilt.android.HiltAndroidApp
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import java.util.concurrent.TimeUnit
 
-// Name of the DataStore preferences file
-private const val USER_PREFERENCE_NAME = "user_details"
-
-// Extension property to easily access DataStore from Context
-val Context.dataStore: DataStore<Preferences> by preferencesDataStore(
-    name = USER_PREFERENCE_NAME
-)
-
 /**
  * Custom Application class for the SG360 app.
+ *
+ * This class serves as the entry point for application-wide initialization logic.
+ * It is annotated with @HiltAndroidApp to enable dependency injection using Hilt.
+ * Responsibilities include:
+ * - Providing a global instance of the application context.
+ * - Initializing periodic background tasks (e.g., InstalledAppsWorker).
  */
+@HiltAndroidApp
 class SG360Application : Application() {
-    // Repository for managing user data
-    lateinit var userRepository: UserRepository
 
-    override fun onCreate() {
-        super.onCreate()
-        Log.d("Application", "onCreate: ")
-
-        // Initialize the user repository
-        userRepository = UserRepository(dataStore)
-        CoroutineScope(Dispatchers.IO).launch {
-            userRepository.saveSecretKey("Uvl2viLLPlqEK8/rRs5bPQsCuElG9iqnt6pZkuVuncA=")
-        }
-        Log.d("Application", "onCreate: ${userRepository.username}")
-
-        // Set up periodic background work
-        setupPeriodicWork()
+    companion object {
+        /**
+         * Global instance of the SG360Application.
+         * This allows access to the application context from anywhere in the app.
+         * The setter is private to ensure it can only be initialized within this class.
+         */
+        lateinit var instance: SG360Application
+            private set
     }
 
     /**
-     * Sets up periodic background work to check installed apps.
+     * Called when the application is created.
+     * Initializes the application instance and sets up periodic background work.
      */
-    private fun setupPeriodicWork() {
-        // Define constraints for the work (requires network connection)
+    override fun onCreate() {
+        super.onCreate()
+
+        // Initialize the global application instance
+        instance = this
+
+        // Schedule periodic background work to monitor installed apps
+//        scheduleInstalledAppsWorker()
+    }
+
+    /**
+     * Schedules a periodic background task to monitor installed apps.
+     *
+     * This method uses WorkManager to schedule a [InstalledAppsWorker] task that runs periodically.
+     * The task is constrained to run only when the device has an active network connection.
+     */
+    private fun scheduleInstalledAppsWorker() {
+        // Define constraints for the worker (e.g., requires network connectivity)
         val constraints = Constraints.Builder()
-            .setRequiredNetworkType(NetworkType.CONNECTED)
+            .setRequiredNetworkType(NetworkType.CONNECTED) // Task requires an active network connection
             .build()
 
-        // Create a periodic work request that runs every 20 minutes
-        val myWorkRequest = PeriodicWorkRequestBuilder<InstalledAppsWorker>(20, TimeUnit.MINUTES)
-            .setConstraints(constraints)
-            .build()
-
-        // Enqueue the work request
-        val workManager = WorkManager.getInstance(this)
-        workManager.enqueueUniquePeriodicWork(
-            "InstalledAppsWorker",
-            KEEP, // Keep existing work if it exists
-            myWorkRequest
+        // Create a periodic work request for the InstalledAppsWorker
+        val workRequest = PeriodicWorkRequestBuilder<InstalledAppsWorker>(
+            12, TimeUnit.HOURS // Run every 12 hours
         )
+            .setConstraints(constraints) // Apply the defined constraints
+            .build()
+
+        // Enqueue the work request using WorkManager
+        CoroutineScope(Dispatchers.Default).launch {
+            WorkManager.getInstance(this@SG360Application)
+                .enqueueUniquePeriodicWork(
+                    "InstalledAppsWorker", // Unique name for the work
+                    KEEP, // Keep existing work if already scheduled
+                    workRequest
+                )
+        }
     }
 }
